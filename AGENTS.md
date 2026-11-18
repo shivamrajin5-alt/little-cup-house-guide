@@ -28,3 +28,7 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+- The café website is one standalone file, `public/cafe.html` (mirrored to Files as `cafe-website.html`); `/` just frames it full-screen. Why: the owner asked for a single self-contained HTML file they can host anywhere.
+- All café details live in the `CONFIG` block at the bottom of that file; links, map and text fill from it. Why: one place to edit.

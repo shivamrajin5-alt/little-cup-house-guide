@@ -1,23 +1,34 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-// The home route ships no og:image, so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+// The café website is a standalone single HTML file (public/cafe.html).
+// This route shows it full-screen in the preview.
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Aurelia Café — Specialty Coffee, Brunch & Desserts" },
+      {
+        name: "description",
+        content:
+          "A cozy specialty coffee house with fresh brunch, indulgent desserts and Instagram-worthy interiors. Book a table on WhatsApp.",
+      },
+      { property: "og:title", content: "Aurelia Café — Where Every Cup Feels Like Home" },
+      {
+        property: "og:description",
+        content: "Specialty coffee, fresh food and unforgettable vibes.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <iframe
+      src="/cafe.html"
+      title="Aurelia Café website"
+      className="fixed inset-0 h-full w-full border-0"
+    />
   );
 }

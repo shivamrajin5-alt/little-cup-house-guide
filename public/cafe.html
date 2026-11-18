@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+<!-- ✏️ REPLACE: café name, city and description in the SEO tags below -->
+<title>Aurelia Café — Specialty Coffee, Brunch & Desserts in Your City</title>
+<meta name="description" content="Aurelia Café is a cozy specialty coffee house in Your City. Hand-brewed coffee, fresh brunch, indulgent desserts and Instagram-worthy interiors. Book a table on WhatsApp." />
+<meta name="theme-color" content="#160e0a" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Aurelia Café — Where Every Cup Feels Like Home" />
+<meta property="og:description" content="Specialty coffee, fresh food and unforgettable vibes in Your City." />
+<meta property="og:image" content="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1200&q=80" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Aurelia Café — Where Every Cup Feels Like Home" />
+<meta name="twitter:description" content="Specialty coffee, fresh food and unforgettable vibes in Your City." />
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1200&q=80" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://images.unsplash.com" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=2000&q=75" />
+
+<!-- ✏️ REPLACE: structured data for Google (name, address, phone, hours) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CafeOrCoffeeShop",
+  "name": "Aurelia Café",
+  "servesCuisine": ["Specialty Coffee", "Brunch", "Desserts"],
+  "address": { "@type": "PostalAddress", "streetAddress": "123 Placeholder Street", "addressLocality": "Your City", "addressCountry": "IN" },
+  "telephone": "+91 00000 00000",
+  "openingHours": "Mo-Su 08:00-23:00",
+  "priceRange": "₹₹",
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "500" }
+}
+</script>
+
+<style>
+/* =========================================================
+   DESIGN TOKENS
+   ========================================================= */
+:root{
+  --espresso:#140d09;
+  --roast:#1f150f;
+  --mocha:#33221a;
+  --choc:#5b3a26;
+  --caramel:#c98a4b;
+  --caramel-2:#e0a965;
+  --gold:#d6b373;
+  --cream:#f8f2e9;
+  --cream-2:#f1e7d8;
+  --beige:#e7d6be;
+  --ink:#24170f;
+  --muted:#7b6555;
+  --line:rgba(36,23,15,.12);
+  --line-dark:rgba(248,242,233,.14);
+
+  --serif:"Fraunces", "Times New Roman", serif;
+  --sans:"Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --r-sm:14px; --r:24px; --r-lg:36px;
+  --shadow-sm:0 8px 24px -12px rgba(36,20,10,.25);
+  --shadow:0 30px 60px -28px rgba(36,20,10,.45);
+  --shadow-gold:0 18px 40px -16px rgba(201,138,75,.6);
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --container:1240px;
+  --nav-h:76px;
+}
+
+/* =========================================================
+   BASE
+   ========================================================= */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 8px);-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--sans);font-size:16px;line-height:1.65;color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+html,body{overflow-x:clip}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.05;margin:0;letter-spacing:-.02em;font-variation-settings:"opsz" 144}
+p{margin:0}
+em{font-style:italic}
+:focus-visible{outline:2px solid var(--caramel-2);outline-offset:3px;border-radius:8px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.container{width:min(100% - 40px, var(--container));margin-inline:auto}
+
+/* film grain over the whole page */
+body::after{content:"";position:fixed;inset:-50%;pointer-events:none;z-index:999;opacity:.07;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation:grain 8s steps(6) infinite}
+@keyframes grain{0%,100%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-3%)}60%{transform:translate(-2%,-1%)}80%{transform:translate(3%,3%)}}
+
+/* =========================================================
+   SHARED COMPONENTS
+   ========================================================= */
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--caramel)}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor;opacity:.7}
+.section{position:relative;padding:110px 0}
+.section-head{max-width:720px;margin-bottom:56px}
+.section-head.center{margin-inline:auto;text-align:center}
+.section-head.center .eyebrow::after{content:"";width:28px;height:1px;background:currentColor;opacity:.7}
+.section-title{font-size:clamp(38px,6vw,68px);margin-top:18px}
+.section-title em{color:var(--caramel)}
+.lead{margin-top:20px;font-size:clamp(16px,1.6vw,18px);color:var(--muted);max-width:600px}
+.center .lead{margin-inline:auto}
+
+.dark{background:var(--espresso);color:var(--cream)}
+.dark .lead{color:rgba(248,242,233,.68)}
+.dark .section-title em{color:var(--gold)}
+
+/* rounded section transitions */
+.curve{border-radius:var(--r-lg) var(--r-lg) 0 0;margin-top:calc(var(--r-lg) * -1);z-index:2}
+
+.btn{--bg:var(--caramel);--fg:var(--espresso);position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;height:54px;padding:0 28px;border-radius:999px;background:var(--bg);color:var(--fg);font-weight:700;font-size:15px;letter-spacing:.01em;transition:transform .4s var(--ease),box-shadow .4s var(--ease),background .3s;overflow:hidden;isolation:isolate;white-space:nowrap}
+.btn::before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.45) 50%,transparent 70%);transform:translateX(-120%);transition:transform .8s var(--ease);z-index:-1}
+.btn:hover{transform:translateY(-3px);box-shadow:var(--shadow-gold)}
+.btn:hover::before{transform:translateX(120%)}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-gold{background:linear-gradient(135deg,var(--caramel-2),var(--caramel) 55%,#a96b33);color:var(--espresso)}
+.btn-ghost{--bg:rgba(248,242,233,.08);--fg:var(--cream);border:1px solid rgba(248,242,233,.35);backdrop-filter:blur(10px)}
+.btn-ghost:hover{--bg:rgba(248,242,233,.16);box-shadow:none}
+.btn-dark{--bg:var(--espresso);--fg:var(--cream)}
+.btn-dark:hover{box-shadow:0 18px 40px -16px rgba(20,13,9,.7)}
+.btn-outline{--bg:transparent;--fg:var(--ink);border:1px solid var(--ink)}
+.btn-outline:hover{--bg:var(--ink);--fg:var(--cream);box-shadow:none}
+.btn-sm{height:44px;padding:0 20px;font-size:14px}
+
+.glass{background:rgba(248,242,233,.08);border:1px solid rgba(248,242,233,.16);backdrop-filter:blur(16px) saturate(140%)}
+
+/* scroll reveal (only hides when JS is on) */
+.js .reveal{opacity:0;transform:translateY(34px);transition:opacity 1s var(--ease),transform 1s var(--ease);transition-delay:var(--d,0s)}
+.js .reveal.in{opacity:1;transform:none}
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+.nav{position:fixed;inset:0 0 auto 0;z-index:100;height:var(--nav-h);display:flex;align-items:center;transition:background .4s,box-shadow .4s,height .4s,border-color .4s;border-bottom:1px solid transparent}
+.nav.scrolled{background:rgba(20,13,9,.62);backdrop-filter:blur(18px) saturate(160%);border-bottom-color:var(--line-dark);box-shadow:0 10px 30px -20px rgba(0,0,0,.6);--nav-h:66px}
+.nav .container{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:inline-flex;align-items:center;gap:12px;color:var(--cream)}
+.logo-mark{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(140deg,var(--caramel-2),var(--choc));box-shadow:inset 0 0 0 1px rgba(255,255,255,.25)}
+.logo-mark svg{width:22px;height:22px;color:var(--cream)}
+.logo-text{font-family:var(--serif);font-size:24px;font-weight:500;letter-spacing:-.01em;line-height:1}
+.logo-text small{display:block;font-family:var(--sans);font-size:9.5px;font-weight:700;letter-spacing:.32em;text-transform:uppercase;opacity:.6;margin-top:5px}
+.nav-links{display:none;gap:6px;list-style:none;margin:0;padding:0}
+.nav-links a{position:relative;display:block;padding:10px 14px;font-size:14.5px;font-weight:500;color:rgba(248,242,233,.82);transition:color .3s}
+.nav-links a::after{content:"";position:absolute;left:14px;right:14px;bottom:4px;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+.nav-links a:hover,.nav-links a.active{color:var(--cream)}
+.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1)}
+.nav-cta{display:none}
+.burger{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;color:var(--cream)}
+.burger span{display:block;width:22px;height:1.5px;background:currentColor;position:relative;transition:background .3s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:22px;height:1.5px;background:currentColor;transition:transform .4s var(--ease),top .4s var(--ease)}
+.burger span::before{top:-7px}.burger span::after{top:7px}
+.burger[aria-expanded="true"] span{background:transparent}
+.burger[aria-expanded="true"] span::before{top:0;transform:rotate(45deg)}
+.burger[aria-expanded="true"] span::after{top:0;transform:rotate(-45deg)}
+
+/* mobile drawer */
+.drawer{position:fixed;inset:0;z-index:99;pointer-events:none}
+.drawer-bg{position:absolute;inset:0;background:rgba(10,6,4,.55);opacity:0;transition:opacity .5s}
+.drawer-panel{position:absolute;top:0;right:0;height:100%;width:min(86vw,380px);background:linear-gradient(180deg,var(--roast),var(--espresso));color:var(--cream);padding:calc(var(--nav-h) + 30px) 34px 40px;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .6s var(--ease);border-left:1px solid var(--line-dark)}
+.drawer.open{pointer-events:auto}
+.drawer.open .drawer-bg{opacity:1}
+.drawer.open .drawer-panel{transform:none}
+.drawer ul{list-style:none;margin:0;padding:0}
+.drawer li{opacity:0;transform:translateX(30px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.drawer.open li{opacity:1;transform:none}
+.drawer.open li:nth-child(1){transition-delay:.12s}.drawer.open li:nth-child(2){transition-delay:.17s}.drawer.open li:nth-child(3){transition-delay:.22s}.drawer.open li:nth-child(4){transition-delay:.27s}.drawer.open li:nth-child(5){transition-delay:.32s}.drawer.open li:nth-child(6){transition-delay:.37s}
+.drawer li a{display:flex;align-items:baseline;gap:14px;padding:12px 0;font-family:var(--serif);font-size:34px;border-bottom:1px solid var(--line-dark)}
+.drawer li a span{font-family:var(--sans);font-size:11px;letter-spacing:.2em;color:var(--gold)}
+.drawer-foot{margin-top:auto;display:grid;gap:12px}
+.drawer-foot p{font-size:13px;color:rgba(248,242,233,.6)}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:var(--cream);overflow:hidden;background:var(--espresso);padding:calc(var(--nav-h) + 60px) 0 120px}
+.hero-media{position:absolute;inset:-6% 0;z-index:0}
+.hero-media img{width:100%;height:100%;object-fit:cover;animation:kenburns 24s ease-in-out infinite alternate}
+@keyframes kenburns{from{transform:scale(1.04)}to{transform:scale(1.14) translate(-1.5%,-1%)}}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:
+  radial-gradient(120% 80% at 80% 20%,transparent 0%,rgba(20,13,9,.35) 50%,rgba(20,13,9,.85) 100%),
+  linear-gradient(180deg,rgba(20,13,9,.55) 0%,rgba(20,13,9,.2) 35%,rgba(20,13,9,.92) 100%)}
+.hero .container{position:relative;z-index:3}
+.hero-eyebrow{color:var(--gold)}
+.hero h1{font-size:clamp(48px,10vw,132px);font-weight:400;line-height:.95;margin-top:22px;max-width:12ch;letter-spacing:-.035em}
+.hero h1 em{display:block;font-weight:300;color:var(--caramel-2)}
+.hero-sub{margin-top:26px;font-size:clamp(17px,2vw,20px);max-width:520px;color:rgba(248,242,233,.82)}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px}
+.hero-stats{display:flex;flex-wrap:wrap;gap:12px;margin-top:54px}
+.stat{display:flex;align-items:center;gap:12px;padding:12px 18px 12px 12px;border-radius:999px;font-size:14px}
+.stat b{font-weight:700}
+.stat i{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(214,179,115,.18);color:var(--gold);font-style:normal}
+.stat i svg{width:17px;height:17px}
+.scroll-cue{position:absolute;z-index:3;right:clamp(20px,4vw,48px);bottom:42px;display:none;flex-direction:column;align-items:center;gap:12px;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:rgba(248,242,233,.6);writing-mode:vertical-rl}
+.scroll-cue::after{content:"";width:1px;height:70px;background:linear-gradient(var(--gold),transparent);animation:cue 2.2s var(--ease) infinite}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* steam + floating beans */
+.fx{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:hidden}
+.steam{position:absolute;right:12%;bottom:18%;width:180px;height:320px;filter:blur(7px);opacity:.55}
+.steam path{fill:none;stroke:rgba(248,242,233,.55);stroke-width:12;stroke-linecap:round;animation:steam 6s ease-in-out infinite;opacity:0}
+.steam path:nth-child(2){animation-delay:2s}.steam path:nth-child(3){animation-delay:4s}
+@keyframes steam{0%{transform:translateY(60px) scaleX(.8);opacity:0}25%{opacity:.9}80%{opacity:.15}100%{transform:translateY(-90px) scaleX(1.25);opacity:0}}
+.bean{position:absolute;width:26px;color:var(--caramel);opacity:.55;animation:float 14s ease-in-out infinite}
+.bean svg{width:100%;height:auto;display:block}
+@keyframes float{0%,100%{transform:translate(0,0) rotate(0)}50%{transform:translate(18px,-40px) rotate(160deg)}}
+
+/* marquee band */
+.marquee{position:relative;z-index:4;background:var(--caramel);color:var(--espresso);overflow:hidden;padding:18px 0;transform:rotate(-1.2deg);margin:-28px -10px 0;box-shadow:0 20px 40px -20px rgba(0,0,0,.4)}
+.marquee-track{display:flex;width:max-content;animation:marquee 38s linear infinite}
+.marquee span{font-family:var(--serif);font-style:italic;font-size:clamp(20px,2.6vw,30px);padding:0 22px;white-space:nowrap;display:inline-flex;align-items:center;gap:44px}
+.marquee span::after{content:"✦";font-style:normal;font-size:.6em}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+.about{background:var(--cream);padding-top:140px}
+.about-grid{display:grid;gap:60px;align-items:center}
+.about-media{position:relative}
+.about-photo{border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/5;box-shadow:var(--shadow)}
+.about-photo img{width:100%;height:100%;object-fit:cover}
+.about-small{position:absolute;right:-6px;bottom:-40px;width:42%;aspect-ratio:1;border-radius:var(--r);overflow:hidden;border:6px solid var(--cream);box-shadow:var(--shadow)}
+.about-small img{width:100%;height:100%;object-fit:cover}
+.badge-float{position:absolute;left:-10px;top:34px;padding:18px 22px;border-radius:20px;background:rgba(248,242,233,.78);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.6);box-shadow:var(--shadow-sm);animation:bob 6s ease-in-out infinite}
+.badge-float b{display:block;font-family:var(--serif);font-size:30px;font-weight:500;line-height:1;color:var(--choc)}
+.badge-float span{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+@keyframes bob{50%{transform:translateY(-10px)}}
+.spin-badge{position:absolute;right:28%;top:-46px;width:120px;height:120px;display:none}
+.spin-badge svg{width:100%;height:100%;animation:spin 18s linear infinite}
+.spin-badge text{font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:.32em;fill:var(--choc)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.story p{color:var(--muted);margin-top:18px;font-size:17px}
+.story p.big{font-family:var(--serif);font-size:clamp(22px,2.4vw,28px);line-height:1.35;color:var(--ink);font-weight:400}
+.signature{margin-top:28px;display:flex;align-items:center;gap:16px}
+.signature b{font-family:var(--serif);font-style:italic;font-size:28px;font-weight:400;color:var(--choc)}
+.signature small{display:block;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
+.features{display:grid;gap:16px;margin-top:42px}
+.feature{display:flex;gap:18px;padding:22px;border-radius:var(--r);background:#fff;border:1px solid var(--line);transition:transform .5s var(--ease),box-shadow .5s var(--ease),border-color .4s}
+.feature:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent}
+.feature-ic{flex:none;width:54px;height:54px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(145deg,var(--cream-2),var(--beige));color:var(--choc)}
+.feature-ic svg{width:26px;height:26px}
+.feature h3{font-size:22px}
+.feature p{font-size:14.5px;color:var(--muted);margin-top:6px}
+
+/* =========================================================
+   MENU
+   ========================================================= */
+.menu{background:var(--cream-2)}
+.menu-top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:30px;margin-bottom:46px}
+.menu-top .section-head{margin-bottom:0}
+.filters{display:flex;gap:8px;overflow-x:auto;padding:6px;border-radius:999px;background:rgba(255,255,255,.65);border:1px solid var(--line);scrollbar-width:none;max-width:100%}
+.filters::-webkit-scrollbar{display:none}
+.filter{flex:none;height:44px;padding:0 20px;border-radius:999px;font-size:14px;font-weight:600;color:var(--muted);transition:background .35s,color .35s}
+.filter:hover{color:var(--ink)}
+.filter[aria-pressed="true"]{background:var(--espresso);color:var(--cream)}
+.menu-grid{display:grid;gap:22px;grid-template-columns:1fr}
+.dish{position:relative;display:flex;flex-direction:column;border-radius:var(--r);background:#fff;overflow:hidden;border:1px solid var(--line);transition:transform .55s var(--ease),box-shadow .55s var(--ease),opacity .4s;}
+.dish:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
+.dish.hide{display:none}
+.dish.pop{animation:pop .6s var(--ease) both}
+@keyframes pop{from{opacity:0;transform:translateY(20px) scale(.97)}}
+.dish-img{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--beige)}
+.dish-img img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
+.dish:hover .dish-img img{transform:scale(1.09)}
+.tag{position:absolute;top:14px;left:14px;padding:6px 12px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:rgba(20,13,9,.7);color:var(--gold);backdrop-filter:blur(8px)}
+.tag.chef{background:var(--caramel);color:var(--espresso)}
+.dish-body{padding:22px 22px 24px;display:flex;flex-direction:column;flex:1}
+.dish-row{display:flex;justify-content:space-between;align-items:baseline;gap:14px}
+.dish h3{font-size:23px}
+.price{font-family:var(--serif);font-size:21px;color:var(--caramel);white-space:nowrap;font-weight:500}
+.dish p{margin-top:8px;font-size:14.5px;color:var(--muted);flex:1}
+.dish-cat{margin-top:16px;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--choc);opacity:.6}
+.menu-cta{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:54px}
+
+/* =========================================================
+   GALLERY
+   ========================================================= */
+.gallery{background:var(--espresso);color:var(--cream)}
+.masonry{columns:2;column-gap:14px}
+.shot{position:relative;margin:0 0 14px;break-inside:avoid;border-radius:20px;overflow:hidden;cursor:zoom-in;background:var(--mocha)}
+.shot img{width:100%;height:auto;transition:transform 1.1s var(--ease),filter .6s}
+.shot::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(20,13,9,.75));opacity:0;transition:opacity .5s}
+.shot figcaption{position:absolute;left:18px;bottom:16px;z-index:2;font-family:var(--serif);font-style:italic;font-size:19px;transform:translateY(12px);opacity:0;transition:all .5s var(--ease)}
+.shot:hover img{transform:scale(1.08)}
+.shot:hover::after{opacity:1}
+.shot:hover figcaption{transform:none;opacity:1}
+.gallery-foot{display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;margin-top:46px;padding-top:30px;border-top:1px solid var(--line-dark)}
+.gallery-foot p{font-family:var(--serif);font-size:clamp(22px,3vw,30px)}
+.gallery-foot p em{color:var(--gold)}
+
+.lightbox{position:fixed;inset:0;z-index:200;display:grid;place-items:center;padding:24px;background:rgba(10,6,4,.92);backdrop-filter:blur(10px);opacity:0;pointer-events:none;transition:opacity .4s}
+.lightbox.open{opacity:1;pointer-events:auto}
+.lightbox img{max-height:86vh;width:auto;border-radius:18px;box-shadow:0 40px 80px -20px #000;transform:scale(.94);transition:transform .5s var(--ease)}
+.lightbox.open img{transform:none}
+.lightbox button{position:absolute;top:20px;right:20px;width:50px;height:50px;border-radius:50%;color:var(--cream);font-size:26px;line-height:1}
+
+/* =========================================================
+   WHY VISIT
+   ========================================================= */
+.why{background:var(--cream)}
+.why-grid{display:grid;gap:18px}
+.why-card{position:relative;padding:34px 30px 32px;border-radius:var(--r);background:#fff;border:1px solid var(--line);overflow:hidden;transition:transform .55s var(--ease),box-shadow .55s var(--ease),background .5s,color .5s}
+.why-card::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 100% at 100% 0%,rgba(201,138,75,.35),transparent 60%),var(--espresso);opacity:0;transition:opacity .55s var(--ease);z-index:0}
+.why-card>*{position:relative;z-index:1}
+.why-card:hover{transform:translateY(-8px);box-shadow:var(--shadow);color:var(--cream)}
+.why-card:hover::before{opacity:1}
+.why-card:hover p{color:rgba(248,242,233,.7)}
+.why-num{font-family:var(--serif);font-size:15px;color:var(--caramel);font-style:italic}
+.why-ic{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;margin:22px 0 26px;background:var(--cream-2);color:var(--choc);transition:transform .7s var(--ease),background .5s,color .5s}
+.why-card:hover .why-ic{transform:rotate(-12deg) scale(1.08);background:var(--caramel);color:var(--espresso)}
+.why-ic svg{width:30px;height:30px}
+.why-card h3{font-size:26px}
+.why-card p{margin-top:10px;font-size:15px;color:var(--muted);transition:color .5s}
+
+/* =========================================================
+   REVIEWS
+   ========================================================= */
+.reviews{background:var(--beige)}
+.reviews-grid{display:grid;gap:18px}
+.rating-hero{position:relative;padding:44px 36px;border-radius:var(--r-lg);background:var(--espresso);color:var(--cream);overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;min-height:380px}
+.rating-hero::before{content:"";position:absolute;width:420px;height:420px;right:-160px;top:-160px;border-radius:50%;background:radial-gradient(circle,rgba(214,179,115,.45),transparent 65%)}
+.rating-hero>*{position:relative}
+.rating-num{font-family:var(--serif);font-size:clamp(96px,14vw,150px);line-height:.85;font-weight:400;letter-spacing:-.05em}
+.rating-num sup{font-size:.36em;color:var(--gold);vertical-align:top;margin-left:4px}
+.stars{display:flex;gap:3px;color:var(--gold)}
+.stars svg{width:18px;height:18px}
+.rating-hero h3{font-size:30px;margin-top:20px}
+.rating-hero p{color:rgba(248,242,233,.65);margin-top:10px;font-size:15px}
+.g-pill{display:inline-flex;align-items:center;gap:10px;margin-top:30px;padding:10px 16px;border-radius:999px;font-size:13px;font-weight:600;width:max-content}
+.review{padding:30px;border-radius:var(--r);background:rgba(255,255,255,.72);border:1px solid rgba(255,255,255,.8);backdrop-filter:blur(10px);display:flex;flex-direction:column;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.review:hover{transform:translateY(-6px) rotate(-.4deg);box-shadow:var(--shadow)}
+.review .stars svg{width:16px;height:16px;color:var(--caramel)}
+.review blockquote{margin:18px 0 26px;font-family:var(--serif);font-size:19px;line-height:1.45;flex:1}
+.reviewer{display:flex;align-items:center;gap:14px}
+.avatar{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:15px;color:var(--cream);background:linear-gradient(140deg,var(--caramel),var(--choc))}
+.reviewer b{display:block;font-size:15px}
+.reviewer small{font-size:12.5px;color:var(--muted)}
+
+/* =========================================================
+   EVENTS
+   ========================================================= */
+.events{background:var(--roast);color:var(--cream);overflow:hidden}
+.events-title{font-size:clamp(48px,9vw,120px);line-height:.92;font-weight:400;letter-spacing:-.04em}
+.events-title em{color:var(--gold);font-weight:300}
+.events-head{display:grid;gap:28px;margin-bottom:60px}
+.events-head p{color:rgba(248,242,233,.68);max-width:440px;font-size:17px}
+.bento{display:grid;gap:16px;grid-template-columns:1fr}
+.ev{position:relative;min-height:300px;border-radius:var(--r);overflow:hidden;padding:30px;display:flex;flex-direction:column;justify-content:flex-end;isolation:isolate;border:1px solid var(--line-dark)}
+.ev img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1.2s var(--ease)}
+.ev::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(20,13,9,.1) 20%,rgba(20,13,9,.88))}
+.ev:hover img{transform:scale(1.08)}
+.ev-when{display:inline-flex;align-self:flex-start;padding:7px 14px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:auto}
+.ev h3{font-size:clamp(28px,3.2vw,40px);margin-top:60px}
+.ev p{margin-top:8px;color:rgba(248,242,233,.75);font-size:15px;max-width:420px}
+.ev-offer{background:linear-gradient(140deg,var(--caramel-2),var(--caramel) 50%,#8d5528);color:var(--espresso);border:0;justify-content:space-between}
+.ev-offer::before{display:none}
+.ev-offer .big{font-family:var(--serif);font-size:clamp(72px,9vw,110px);line-height:.85;letter-spacing:-.05em}
+.ev-offer h3{margin-top:0}
+.ev-offer p{color:rgba(20,13,9,.75)}
+.ev-offer .ev-when{background:var(--espresso);color:var(--gold);margin-bottom:0}
+.events-cta{margin-top:50px;display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;padding:30px 34px;border-radius:var(--r)}
+.events-cta p{font-family:var(--serif);font-size:clamp(22px,2.6vw,30px)}
+
+/* =========================================================
+   VISIT
+   ========================================================= */
+.visit{background:var(--cream)}
+.visit-grid{display:grid;gap:22px}
+.info-card{padding:38px 32px;border-radius:var(--r-lg);background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm)}
+.info-row{display:flex;gap:18px;padding:22px 0;border-bottom:1px solid var(--line)}
+.info-row:first-of-type{padding-top:6px}
+.info-row:last-of-type{border-bottom:0}
+.info-ic{flex:none;width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:var(--cream-2);color:var(--choc)}
+.info-ic svg{width:21px;height:21px}
+.info-row h4{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.info-row p,.info-row a{font-size:17px;margin-top:4px;display:block}
+.info-row a:hover{color:var(--caramel)}
+.hours{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;margin-top:6px;font-size:14.5px}
+.hours span:nth-child(even){text-align:right;font-weight:600;white-space:nowrap}
+.hide-sm{display:none}
+@media (min-width:640px){.hide-sm{display:inline}}
+.open-now{display:inline-flex;align-items:center;gap:8px;margin-top:10px;font-size:13px;font-weight:600;color:#3f7a4a}
+.open-now::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor;box-shadow:0 0 0 4px rgba(63,122,74,.18)}
+.open-now.closed{color:#a3442f}.open-now.closed::before{box-shadow:0 0 0 4px rgba(163,68,47,.18)}
+.info-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.map{position:relative;border-radius:var(--r-lg);overflow:hidden;min-height:420px;box-shadow:var(--shadow);background:var(--beige)}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:sepia(.35) saturate(.85) contrast(1.02)}
+.map-pin{position:absolute;left:20px;bottom:20px;right:20px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 18px;border-radius:20px;background:rgba(20,13,9,.75);color:var(--cream);backdrop-filter:blur(14px)}
+.map-pin b{font-family:var(--serif);font-size:20px;font-weight:500}
+.map-pin small{display:block;font-size:12.5px;opacity:.7}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.footer{background:var(--espresso);color:var(--cream);padding:100px 0 30px}
+.footer-big{font-family:var(--serif);font-size:clamp(44px,10vw,150px);line-height:.9;letter-spacing:-.045em;font-weight:400;padding-bottom:60px;border-bottom:1px solid var(--line-dark)}
+.footer-big em{color:var(--gold);font-weight:300}
+.footer-grid{display:grid;gap:40px;padding:60px 0}
+.footer h4{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.footer ul{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.footer li a,.footer li{color:rgba(248,242,233,.72);font-size:15px;transition:color .3s}
+.footer li a:hover{color:var(--cream)}
+.footer .brand-line{margin-top:18px;color:rgba(248,242,233,.6);max-width:320px;font-size:15px}
+.socials{display:flex;gap:10px;margin-top:24px}
+.socials a{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line-dark);transition:background .35s,color .35s,transform .35s var(--ease)}
+.socials a:hover{background:var(--caramel);color:var(--espresso);transform:translateY(-3px);border-color:transparent}
+.socials svg{width:19px;height:19px}
+.copyright{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-top:26px;border-top:1px solid var(--line-dark);font-size:13px;color:rgba(248,242,233,.5)}
+
+/* floating WhatsApp */
+.fab{position:fixed;right:18px;bottom:18px;z-index:90;width:60px;height:60px;border-radius:50%;display:grid;place-items:center;background:#25D366;color:#fff;box-shadow:0 16px 34px -10px rgba(37,211,102,.65);transition:transform .4s var(--ease);transform:scale(0)}
+.fab.show{transform:scale(1)}
+.fab:hover{transform:scale(1.08)}
+.fab svg{width:30px;height:30px}
+.fab::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #25D366;animation:ping 2.4s var(--ease) infinite}
+@keyframes ping{from{transform:scale(1);opacity:.8}to{transform:scale(1.7);opacity:0}}
+
+
+/* =========================================================
+   EDITORIAL LAYER — intro, cursor, motion, grading
+   ========================================================= */
+/* cohesive warm film grade on every photo (kills the "stock" look) */
+img:not(.raw){filter:saturate(.86) contrast(1.06) sepia(.12) brightness(.98)}
+.hero-media img{filter:saturate(.8) contrast(1.12) sepia(.18) brightness(.9)}
+
+/* scroll progress */
+.progress{position:fixed;top:0;left:0;height:2px;width:100%;z-index:150;background:linear-gradient(90deg,var(--caramel),var(--gold));transform-origin:left;transform:scaleX(0)}
+
+/* intro curtain */
+.intro-screen{position:fixed;inset:0;z-index:1000;background:var(--espresso);color:var(--cream);display:grid;place-items:center;transition:transform 1.1s cubic-bezier(.77,0,.18,1)}
+.intro-screen.done{transform:translateY(-100%)}
+.intro-inner{text-align:center;overflow:hidden}
+.intro-word{font-family:var(--serif);font-size:clamp(56px,11vw,140px);font-weight:300;letter-spacing:-.04em;line-height:1;display:block;transform:translateY(105%);animation:rise 1s var(--ease) .15s forwards}
+.intro-word em{color:var(--gold)}
+.intro-sub{display:block;margin-top:18px;font-size:11px;letter-spacing:.42em;text-transform:uppercase;color:rgba(248,242,233,.55);opacity:0;animation:fade .8s ease .6s forwards}
+.intro-count{position:absolute;right:clamp(20px,4vw,48px);bottom:clamp(20px,4vw,40px);font-family:var(--serif);font-size:clamp(40px,6vw,72px);font-weight:300;color:var(--caramel)}
+.intro-line{position:absolute;left:0;bottom:0;height:1px;width:100%;background:var(--gold);transform-origin:left;transform:scaleX(0)}
+@keyframes rise{to{transform:none}}
+@keyframes fade{to{opacity:1}}
+
+/* hero: word-by-word mask reveal, triggered after intro */
+.hero h1 .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
+.hero h1 .w>span{display:inline-block;transform:translateY(110%);transition:transform 1.3s var(--ease);transition-delay:calc(var(--i) * .08s + .1s)}
+.hero h1 em{display:block}
+.ready .hero h1 .w>span{transform:none}
+.js .hero .intro-fade{opacity:0;transform:translateY(24px);transition:opacity 1.2s var(--ease),transform 1.2s var(--ease);transition-delay:var(--d,0s)}
+.ready .hero .intro-fade{opacity:1;transform:none}
+.js .hero-media img{transform:scale(1.25);transition:transform 2.6s cubic-bezier(.2,.7,.1,1)}
+.ready .hero-media img{transform:scale(1.04)}
+.hero-media-inner{position:absolute;inset:0;transition:transform 1.2s var(--ease)}
+.hero-media-inner img{animation:kenburns 26s ease-in-out 2.6s infinite alternate}
+
+/* letterbox frame + editorial meta */
+.hero-frame{position:absolute;inset:calc(var(--nav-h) + 14px) clamp(14px,2.5vw,32px) 24px;z-index:2;border:1px solid rgba(248,242,233,.14);border-radius:28px;pointer-events:none}
+.hero-side{position:absolute;z-index:3;left:clamp(26px,3.4vw,52px);top:50%;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;font-size:11px;letter-spacing:.38em;text-transform:uppercase;color:rgba(248,242,233,.5);display:none}
+.hero-meta{position:absolute;z-index:3;right:clamp(28px,4vw,60px);top:calc(var(--nav-h) + 44px);text-align:right;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:rgba(248,242,233,.6);display:none}
+.hero-meta b{display:block;font-family:var(--serif);font-style:italic;font-weight:300;font-size:46px;letter-spacing:-.02em;text-transform:none;color:var(--gold);line-height:1;margin-bottom:8px}
+.hero-caption{display:none;position:absolute;z-index:3;right:calc(clamp(28px,4vw,60px) + 44px);bottom:56px;max-width:220px;font-family:var(--serif);font-style:italic;font-size:15px;color:rgba(248,242,233,.7);border-top:1px solid rgba(248,242,233,.25);padding-top:12px}
+.hero-caption span{display:block;font-family:var(--sans);font-style:normal;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+
+/* image reveal: curtain wipe */
+.js .img-reveal{clip-path:inset(0 0 100% 0 round var(--r-lg));transition:clip-path 1.5s cubic-bezier(.77,0,.18,1)}
+.js .in .img-reveal{clip-path:inset(0 0 0 0 round var(--r-lg))}
+.js .img-reveal img{transform:scale(1.25);transition:transform 2s var(--ease)}
+.js .in .img-reveal img{transform:scale(1)}
+
+/* editorial section index */
+.idx{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:0;text-transform:none;font-size:15px;margin-right:2px}
+
+/* manifesto: words light up on scroll */
+.manifesto{background:var(--espresso);color:var(--cream);padding:140px 0 160px;position:relative;overflow:hidden}
+.manifesto::before{content:"“";position:absolute;left:4%;top:-40px;font-family:var(--serif);font-size:420px;line-height:1;color:var(--caramel);opacity:.08}
+.manifesto-text{font-family:var(--serif);font-weight:300;font-size:clamp(34px,5.6vw,80px);line-height:1.1;letter-spacing:-.03em;max-width:16ch}
+.manifesto-text .mw{opacity:.16;transition:opacity .5s ease,color .5s}
+.manifesto-text .mw.lit{opacity:1}
+.manifesto-text em .mw.lit{color:var(--gold)}
+.manifesto-foot{display:flex;flex-wrap:wrap;gap:40px;margin-top:70px;padding-top:30px;border-top:1px solid var(--line-dark)}
+.manifesto-foot div{min-width:140px}
+.manifesto-foot b{display:block;font-family:var(--serif);font-weight:300;font-size:clamp(44px,5vw,64px);line-height:1;color:var(--gold);letter-spacing:-.03em}
+.manifesto-foot span{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(248,242,233,.55)}
+
+/* custom cursor (fine pointers only) */
+.cursor,.cursor-dot{position:fixed;top:0;left:0;z-index:1001;pointer-events:none;border-radius:50%;display:none}
+.cursor{width:42px;height:42px;margin:-21px 0 0 -21px;border:1px solid rgba(201,138,75,.7);display:none;place-items:center;transition:width .35s var(--ease),height .35s var(--ease),margin .35s var(--ease),background .35s,border-color .35s;mix-blend-mode:normal}
+.cursor span{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--espresso);opacity:0;transition:opacity .25s}
+.cursor-dot{width:6px;height:6px;margin:-3px 0 0 -3px;background:var(--caramel)}
+.cursor.hover{width:64px;height:64px;margin:-32px 0 0 -32px;background:rgba(201,138,75,.14);border-color:transparent}
+.cursor.view{width:92px;height:92px;margin:-46px 0 0 -46px;background:var(--gold);border-color:transparent}
+.cursor.view span{opacity:1}
+@media (pointer:fine) and (min-width:980px){
+  .cursor{display:grid}.cursor-dot{display:block}
+  .shot{cursor:none}
+}
+
+/* tilt cards */
+.tilt{transform-style:preserve-3d;will-change:transform}
+.dish.tilt:hover{transform:perspective(900px) rotateX(var(--rx,0)) rotateY(var(--ry,0)) translateY(-8px)}
+.dish-img::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(255,236,200,.35),transparent 45%);opacity:0;transition:opacity .4s;pointer-events:none}
+.dish:hover .dish-img::after{opacity:1}
+
+/* price chip slides in an "Add" hint */
+.dish-row .price{position:relative}
+.dish h3{transition:color .4s}
+.dish:hover h3{color:var(--choc)}
+
+/* gallery: grayscale-to-warm on hover */
+.shot img{filter:saturate(.55) contrast(1.05) sepia(.2) brightness(.92)}
+.shot:hover img{filter:saturate(1) contrast(1.05) sepia(.05)}
+.shot .num{position:absolute;top:14px;left:16px;z-index:2;font-family:var(--serif);font-style:italic;font-size:14px;color:var(--cream);opacity:.8}
+
+/* magnetic buttons get a smooth return */
+.magnetic{transition:transform .5s var(--ease),box-shadow .4s var(--ease),background .3s}
+.magnetic>*{pointer-events:none}
+
+@media (min-width:980px){
+  .hero-side,.hero-meta,.hero-caption{display:block}
+  .hero .container{padding-left:clamp(0px,3vw,40px)}
+}
+
+/* =========================================================
+   RESPONSIVE (mobile-first)
+   ========================================================= */
+@media (min-width:640px){
+  .menu-grid{grid-template-columns:repeat(2,1fr)}
+  .why-grid{grid-template-columns:repeat(2,1fr)}
+  .features{grid-template-columns:1fr}
+  .masonry{columns:3}
+  .bento{grid-template-columns:repeat(2,1fr)}
+  .reviews-grid{grid-template-columns:repeat(2,1fr)}
+  .rating-hero{grid-column:1/-1}
+  .footer-grid{grid-template-columns:repeat(2,1fr)}
+  .spin-badge{display:block}
+}
+@media (min-width:980px){
+  .nav-links{display:flex}
+  .nav-cta{display:inline-flex}
+  .burger{display:none}
+  .section{padding:150px 0}
+  .scroll-cue{display:flex}
+  .about-grid{grid-template-columns:1.05fr 1fr;gap:100px}
+  .about-small{right:-40px}
+  .features{grid-template-columns:repeat(3,1fr);gap:14px}
+  .feature{flex-direction:column;gap:16px}
+  .menu-grid{grid-template-columns:repeat(3,1fr);gap:26px}
+  .masonry{columns:4;column-gap:18px}
+  .shot{margin-bottom:18px}
+  .why-grid{grid-template-columns:repeat(4,1fr)}
+  .why-card:nth-child(even){transform:translateY(40px)}
+  .why-card:nth-child(even):hover{transform:translateY(32px)}
+  .reviews-grid{grid-template-columns:repeat(3,1fr)}
+  .rating-hero{grid-column:auto;grid-row:span 2}
+  .events-head{grid-template-columns:1.4fr 1fr;align-items:end}
+  .bento{grid-template-columns:repeat(6,1fr);grid-auto-rows:280px}
+  .ev{min-height:0}
+  .ev:nth-child(1){grid-column:span 4;grid-row:span 2}
+  .ev:nth-child(2){grid-column:span 2}
+  .ev:nth-child(3){grid-column:span 2}
+  .ev:nth-child(4){grid-column:span 3}
+  .ev:nth-child(5){grid-column:span 3}
+  .visit-grid{grid-template-columns:1fr 1.25fr}
+  .map{min-height:100%}
+  .footer-grid{grid-template-columns:1.6fr 1fr 1fr 1fr}
+  .fab{right:28px;bottom:28px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .js .reveal,.js .hero .intro-fade{opacity:1;transform:none}
+  .js .img-reveal{clip-path:none}.hero h1 .w>span{transform:none}.intro-screen{display:none}.manifesto-text .mw{opacity:1}
+}
+</style>
+</head>
+
+<body>
+<!--
+  =====================================================================
+  ✏️  HOW TO CUSTOMISE THIS WEBSITE
+  1. Scroll to the bottom <script> and edit the CONFIG block
+     (café name, city, phone, WhatsApp, Instagram, Facebook, Maps, hours, year).
+     Every button, link and the map update automatically.
+  2. Search this file for "✏️ REPLACE" to find every photo, menu item,
+     price, review and offer you should swap for your real content.
+  3. Photos: replace each src="https://images.unsplash.com/..." with your own
+     image URL or a local file such as src="images/latte.jpg".
+  =====================================================================
+-->
+
+<a class="sr-only" href="#main">Skip to content</a>
+
+<!-- cinematic intro (plays once per visit) -->
+<div class="intro-screen" id="intro" aria-hidden="true">
+  <div class="intro-inner">
+    <span class="intro-word"><span data-cfg="name">Aurelia</span> <em>café</em></span>
+    <span class="intro-sub">Slow coffee · Est. <span data-cfg="year">2019</span></span>
+  </div>
+  <span class="intro-count" id="introCount">0</span>
+  <span class="intro-line" id="introLine"></span>
+</div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<div class="cursor" id="cursor" aria-hidden="true"><span>View</span></div>
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+<!-- ================= NAVBAR ================= -->
+<header class="nav" id="nav">
+  <div class="container">
+    <a href="#home" class="logo" aria-label="Home">
+      <!-- ✏️ REPLACE: swap this icon for your logo image if you have one: <img src="logo.png" alt="Café logo" height="42"> -->
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 9h13v4a6 6 0 0 1-6 6h-1a6 6 0 0 1-6-6V9Z"/><path d="M17 10h1.5a2.5 2.5 0 0 1 0 5H17"/><path d="M8 3c0 1.5 1.5 1.5 1.5 3M12 3c0 1.5 1.5 1.5 1.5 3"/></svg>
+      </span>
+      <span class="logo-text"><span data-cfg="name">Aurelia</span><small>Coffee House</small></span>
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#visit">Visit Us</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-gold btn-sm nav-cta magnetic" data-link="whatsapp" href="#" target="_blank" rel="noopener">Book a Table</a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><span></span></button>
+  </div>
+</header>
+
+<!-- mobile slide-in navigation -->
+<div class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer-bg" data-close></div>
+  <aside class="drawer-panel" aria-label="Mobile navigation">
+    <ul>
+      <li><a href="#home" data-close><span>01</span>Home</a></li>
+      <li><a href="#about" data-close><span>02</span>About</a></li>
+      <li><a href="#menu" data-close><span>03</span>Menu</a></li>
+      <li><a href="#gallery" data-close><span>04</span>Gallery</a></li>
+      <li><a href="#reviews" data-close><span>05</span>Reviews</a></li>
+      <li><a href="#visit" data-close><span>06</span>Visit Us</a></li>
+    </ul>
+    <div class="drawer-foot">
+      <a class="btn btn-gold" data-link="whatsapp" href="#" target="_blank" rel="noopener">Book a Table</a>
+      <a class="btn btn-ghost" data-link="tel" href="#">Call <span data-cfg="phone">+91 00000 00000</span></a>
+      <p data-cfg="hoursShort">Open daily · 8:00 AM – 11:00 PM</p>
+    </div>
+  </aside>
+</div>
+
+<main id="main">
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+  <div class="hero-media" data-parallax="0.25"><div class="hero-media-inner" id="heroInner">
+    <!-- ✏️ REPLACE: hero photo (wide, dark, cinematic works best — latte art, interior, pour-over) -->
+    <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=2000&q=75" alt="Barista slowly pouring a hand-brewed coffee in warm light" fetchpriority="high" width="2000" height="1333" />
+  </div></div>
+  <div class="hero-frame" aria-hidden="true"></div>
+  <span class="hero-side" aria-hidden="true">Vol. 01 — The Slow Coffee Issue</span>
+  <div class="hero-meta" aria-hidden="true"><b>N° 01</b>Est. <span data-cfg="year">2019</span> · <span data-cfg="city">Your City</span></div>
+  <p class="hero-caption" aria-hidden="true"><span>Fig. 01</span>The pour-over ritual — four minutes, one perfect cup.</p>
+
+  <div class="fx" aria-hidden="true">
+    <svg class="steam" viewBox="0 0 180 320">
+      <path d="M60 300 C 20 240, 100 200, 60 140 S 80 40, 60 10"/>
+      <path d="M95 300 C 55 240, 135 200, 95 140 S 115 40, 95 10"/>
+      <path d="M130 300 C 90 240, 170 200, 130 140 S 150 40, 130 10"/>
+    </svg>
+    <span class="bean" style="left:8%;top:22%;animation-duration:13s"><svg viewBox="0 0 24 32"><ellipse cx="12" cy="16" rx="10" ry="14" fill="currentColor"/><path d="M12 3c-4 6 4 20 0 26" stroke="#140d09" stroke-width="1.6" fill="none" opacity=".6"/></svg></span>
+    <span class="bean" style="left:46%;top:14%;width:18px;animation-duration:17s;animation-delay:-4s"><svg viewBox="0 0 24 32"><ellipse cx="12" cy="16" rx="10" ry="14" fill="currentColor"/><path d="M12 3c-4 6 4 20 0 26" stroke="#140d09" stroke-width="1.6" fill="none" opacity=".6"/></svg></span>
+    <span class="bean" style="right:6%;top:30%;width:30px;animation-duration:15s;animation-delay:-8s"><svg viewBox="0 0 24 32"><ellipse cx="12" cy="16" rx="10" ry="14" fill="currentColor"/><path d="M12 3c-4 6 4 20 0 26" stroke="#140d09" stroke-width="1.6" fill="none" opacity=".6"/></svg></span>
+    <span class="bean" style="right:30%;top:58%;width:16px;animation-duration:19s;animation-delay:-2s"><svg viewBox="0 0 24 32"><ellipse cx="12" cy="16" rx="10" ry="14" fill="currentColor"/><path d="M12 3c-4 6 4 20 0 26" stroke="#140d09" stroke-width="1.6" fill="none" opacity=".6"/></svg></span>
+    <span class="bean" style="left:24%;top:8%;width:20px;animation-duration:21s;animation-delay:-10s"><svg viewBox="0 0 24 32"><ellipse cx="12" cy="16" rx="10" ry="14" fill="currentColor"/><path d="M12 3c-4 6 4 20 0 26" stroke="#140d09" stroke-width="1.6" fill="none" opacity=".6"/></svg></span>
+  </div>
+
+  <div class="container">
+    <span class="eyebrow hero-eyebrow intro-fade">Specialty Coffee House<span class="hide-sm">&nbsp;· <span data-cfg="city">Your City</span></span></span>
+    <h1 aria-label="Where Every Cup Feels Like Home"><span aria-hidden="true"><span class="w"><span style="--i:0">Where</span></span> <span class="w"><span style="--i:1">Every</span></span> <span class="w"><span style="--i:2">Cup</span></span> <em><span class="w"><span style="--i:3">Feels</span></span> <span class="w"><span style="--i:4">Like</span></span> <span class="w"><span style="--i:5">Home</span></span></em></span></h1>
+    <p class="hero-sub intro-fade" style="--d:.7s">Specialty coffee, fresh food and unforgettable vibes in <span data-cfg="city">Your City</span>.</p>
+    <div class="hero-ctas intro-fade" style="--d:.85s">
+      <a href="#menu" class="btn btn-gold magnetic">Explore Menu
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="#" data-link="whatsapp" target="_blank" rel="noopener" class="btn btn-ghost magnetic">Book a Table</a>
+    </div>
+    <div class="hero-stats intro-fade" style="--d:1s">
+      <!-- ✏️ REPLACE: your real Google rating -->
+      <div class="stat glass"><i><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg></i><span><b>4.8★</b> Google rating</span></div>
+      <div class="stat glass"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 9h13v4a6 6 0 0 1-6 6h-1a6 6 0 0 1-6-6V9Z"/><path d="M17 10h1.5a2.5 2.5 0 0 1 0 5H17"/></svg></i><span><b>Freshly</b> brewed daily</span></div>
+      <div class="stat glass"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 11 12 4l9 7v9H3z"/><path d="M9 20v-6h6v6"/></svg></i><span><b>Cozy</b> ambience</span></div>
+    </div>
+  </div>
+  <span class="scroll-cue" aria-hidden="true">Scroll</span>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Single-origin espresso</span><span>Slow mornings</span><span>Fresh-baked every dawn</span><span>Latte art therapy</span><span>Brunch till late</span><span>Good company</span>
+    <span>Single-origin espresso</span><span>Slow mornings</span><span>Fresh-baked every dawn</span><span>Latte art therapy</span><span>Brunch till late</span><span>Good company</span>
+  </div>
+</div>
+
+<!-- ================= ABOUT ================= -->
+<section class="section about" id="about">
+  <div class="container about-grid">
+    <div class="about-media reveal">
+      <div class="about-photo img-reveal">
+        <!-- ✏️ REPLACE: a wide shot of your café interior -->
+        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1100&q=75" alt="Warm, sunlit café interior with wooden tables and plants" loading="lazy" width="1100" height="1375" />
+      </div>
+      <div class="about-small img-reveal" style="transition-delay:.3s">
+        <!-- ✏️ REPLACE: a close-up of your signature coffee -->
+        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=75" alt="Close-up of a cappuccino with leaf latte art" loading="lazy" width="600" height="600" />
+      </div>
+      <div class="badge-float"><b>Since <span data-cfg="year">2019</span></b><span>Brewing happiness daily</span></div>
+      <div class="spin-badge" aria-hidden="true">
+        <svg viewBox="0 0 120 120"><defs><path id="circ" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs><circle cx="60" cy="60" r="58" fill="#f8f2e9"/><text><textPath href="#circ">HANDCRAFTED · SLOW BREWED · WITH LOVE ·</textPath></text><text x="60" y="68" text-anchor="middle" style="font-family:Fraunces,serif;font-size:24px;letter-spacing:0;fill:#c98a4b">✦</text></svg>
+      </div>
+    </div>
+
+    <div class="story">
+      <span class="eyebrow reveal"><span class="idx">N° 01</span> Our Story</span>
+      <h2 class="section-title reveal" style="--d:.1s">Brewed slowly. <em>Shared</em> warmly.</h2>
+      <!-- ✏️ REPLACE: your real story (keep it short and personal) -->
+      <p class="big reveal" style="--d:.15s">We started with one simple belief — that a great cup of coffee can turn an ordinary day into a beautiful one.</p>
+      <p class="reveal" style="--d:.2s">Every bean we pour is ethically sourced and roasted in small batches. Every plate is made from scratch the morning you order it. And every corner of our space was designed for lingering — for first dates, long catch-ups, quiet laptops and loud laughter.</p>
+      <div class="signature reveal" style="--d:.25s"><div><b>— The Founders</b><small><span data-cfg="name">Aurelia</span> Café</small></div></div>
+
+      <div class="features">
+        <article class="feature reveal" style="--d:.1s">
+          <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 9h13v4a6 6 0 0 1-6 6h-1a6 6 0 0 1-6-6V9Z"/><path d="M17 10h1.5a2.5 2.5 0 0 1 0 5H17M8 3c0 1.5 1.5 1.5 1.5 3M12 3c0 1.5 1.5 1.5 1.5 3"/></svg></span>
+          <div><h3>Specialty Coffee</h3><p>Single-origin beans, dialled in daily by baristas who obsess over every shot.</p></div>
+        </article>
+        <article class="feature reveal" style="--d:.2s">
+          <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 13.9A4 4 0 0 1 7.5 6a5 5 0 0 1 9 0A4 4 0 0 1 18 13.9V20H6z"/><path d="M6 17h12"/></svg></span>
+          <div><h3>Fresh Food</h3><p>Brunch plates, bakes and bowls made from scratch with seasonal ingredients.</p></div>
+        </article>
+        <article class="feature reveal" style="--d:.3s">
+          <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 3v2M5.6 5.6 7 7M3 12h2M19 12h2M17 7l1.4-1.4"/><path d="M8 16a4 4 0 1 1 8 0"/><path d="M4 20h16"/></svg></span>
+          <div><h3>Aesthetic Ambience</h3><p>Soft light, warm textures and corners made for lingering — and for your feed.</p></div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MANIFESTO ================= -->
+<section class="manifesto" aria-label="Our philosophy">
+  <div class="container">
+    <span class="eyebrow" style="color:var(--gold);margin-bottom:40px"><span class="idx">N° 02</span> The Philosophy</span>
+    <!-- ✏️ REPLACE (optional): your brand belief in one or two lines -->
+    <p class="manifesto-text" data-words>We believe in slow mornings, honest ingredients and coffee that tastes like it was made <em>just for you.</em></p>
+    <div class="manifesto-foot">
+      <!-- ✏️ REPLACE: your real numbers -->
+      <div><b data-count="12">0</b><span>Single origins</span></div>
+      <div><b data-count="40">0</b><span>Cups an hour</span></div>
+      <div><b data-count="500" data-suffix="+">0</b><span>Five-star reviews</span></div>
+      <div><b data-count="7">0</b><span>Days a week</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MENU ================= -->
+<section class="section menu curve" id="menu">
+  <div class="container">
+    <div class="menu-top">
+      <div class="section-head">
+        <span class="eyebrow reveal"><span class="idx">N° 03</span> Signature Menu</span>
+        <h2 class="section-title reveal" style="--d:.1s">Made to be <em>savoured.</em></h2>
+        <p class="lead reveal" style="--d:.15s">A short, obsessive menu — every item earns its place.</p>
+      </div>
+      <div class="filters reveal" role="group" aria-label="Filter menu by category">
+        <button class="filter" aria-pressed="true" data-filter="all">All</button>
+        <button class="filter" aria-pressed="false" data-filter="coffee">Coffee</button>
+        <button class="filter" aria-pressed="false" data-filter="food">Food</button>
+        <button class="filter" aria-pressed="false" data-filter="desserts">Desserts</button>
+        <button class="filter" aria-pressed="false" data-filter="beverages">Beverages</button>
+        <button class="filter" aria-pressed="false" data-filter="specials">Specials</button>
+      </div>
+    </div>
+
+    <!-- ✏️ REPLACE: menu items — photo, name, description, price (₹ placeholders). Keep data-cat as one of: coffee, food, desserts, beverages, specials -->
+    <div class="menu-grid" id="menuGrid">
+      <article class="dish tilt reveal" data-cat="coffee">
+        <div class="dish-img"><span class="tag">Bestseller</span><img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=800&q=75" alt="Velvet cappuccino with latte art" loading="lazy" width="800" height="600" /></div>
+        <div class="dish-body"><div class="dish-row"><h3>Velvet Cappuccino</h3><span class="price">₹240</span></div><p>Double ristretto, silky micro-foam and a whisper of cocoa. Our house classic.</p><span class="dish-cat">Coffee</span></div>
+      </article>
+      <article class="dish tilt reveal" data-cat="coffee" style="--d:.08s">
+        <div class="dish-img"><img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=800&q=75" alt="Iced caramel cold brew in a tall glass" loading="lazy" width="800" height="600" /></div>
+        <div class="dish-body"><div class="dish-row"><h3>Salted Caramel Cold Brew</h3><span class="price">₹290</span></div><p>Eighteen-hour steeped brew, house caramel and a cloud of sweet cream.</p><span class="dish-cat">Coffee</span></div>
+      </article>
+      <article class="dish tilt reveal" data-cat="coffee" style="--d:.16s">
+        <div class="dish-img"><img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=800&q=75" alt="Flat white being poured" loading="lazy" width="800" height="600" /></div>
+        <div class="dish-body"><div class="dish-row"><h3>Honey Oat Flat White</h3><span class="price">₹260</span></div><p>Velvety oat milk, wildflower honey and a bold, chocolatey espresso.</p><span class="dish-cat">Coffee</span></div>
+      </article>
+      <article class="dish tilt reveal" data-cat="food">
+        <div class="dish-img"><span class="tag">Bestseller</span><img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=75" alt="Sourdough toast topped with avocado and fried egg" loading="lazy" width="800" height="600" /></div>
+        <div class="dish-body"><div class="dish-row"><h3>Sunny Sourdough</h3><span class="price">₹380</span></div><p>Smashed avocado, chilli crunch and a jammy egg on toasted house sourdough.</p><span class="dish-cat">Food</span></div>
+      </article>
+      <article class="dish tilt reveal" data-cat="food" style="--d:.08s">
+        <div class="dish-img"><img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=800&q=75" alt="Stack of fluffy pancakes with syrup" loading="lazy" width="800" height="600" /></div>
+        <div class="dish-body"><div class="dish-row"><h3>Cloud Pancake Stack</h3><span class="price">₹420</span></div><p>Soufflé-soft pancakes, maple butter and seasonal berries. Pure weekend.</p><span class="dish-cat">Food</span></div>
+      </article>
+      <article class="dish tilt reveal" data-cat="food" style="--d:.16s">
+        <div class="dish-img"><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=800&q=75" alt="Freshly baked butter croissants" loading="lazy" width="800" height="600" /></div>
+        <div class="dish-body"><div class="dish-row"><h3>Butter Croissant</h3><span class="price">₹190</span></div><p>Seventy-two layers of French butter, baked fresh every single morning.</p><span class="dish-cat">Food</span></div>
+      </article>
+      <article class="dish tilt reveal" data-cat="desserts">
+        <div class="dish-img"><span class="tag chef">Chef's Special</span><img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=800&q=75" alt="Classic tiramisu slice dusted with cocoa" loading="lazy" width="800" height="600" /></div>
+        <div class="dish-body"><div class="dish-row"><h3>Espresso Tiramisu</h3><span class="price">₹350</span></div><p>Mascarpone clouds, espresso-soaked ladyfingers and a heavy dusting of cocoa.</p><span class="dish-cat">Desserts</span></div>
+      </article>
+      <article class="dish tilt reveal" data-cat="desserts" style="--d:.08s">
+        <div class="dish-img"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=75" alt="Rich chocolate fudge cake" loading="lazy" width="800" height="600" /></div>
+        <div class="dish-body"><div class="dish-row"><h3>Midnight Fudge Cake</h3><span class="price">₹320</span></div><p>Dark Belgian chocolate, ganache drip and a pinch of sea salt. Dangerous.</p><span class="dish-cat">Desserts</span></div>
+      </article>
+      <article class="dish tilt reveal" data-cat="desserts" style="--d:.16s">
+        <div class="dish-img"><img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=800&q=75" alt="Berry cream cake slice" loading="lazy" width="800" height="600" /></div>
+        <div class="dish-body"><div class="dish-row"><h3>Berry Bloom Cake</h3><span class="price">₹310</span></div><p>Vanilla sponge, mascarpone cream and fresh raspberries. Light as a daydream.</p><span class="dish-cat">Desserts</span></div>
+      </article>
+      <article class="dish tilt reveal" data-cat="beverages">
+        <div class="dish-img"><span class="tag">Bestseller</span><img src="https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&w=800&q=75" alt="Ceremonial matcha latte with latte art" loading="lazy" width="800" height="600" /></div>
+        <div class="dish-body"><div class="dish-row"><h3>Ceremonial Matcha Latte</h3><span class="price">₹280</span></div><p>Stone-ground Uji matcha whisked to order with your choice of milk.</p><span class="dish-cat">Beverages</span></div>
+      </article>
+      <article class="dish tilt reveal" data-cat="beverages" style="--d:.08s">
+        <div class="dish-img"><img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=800&q=75" alt="Iced peach tea with lime" loading="lazy" width="800" height="600" /></div>
+        <div class="dish-body"><div class="dish-row"><h3>Sparkling Peach Iced Tea</h3><span class="price">₹220</span></div><p>Cold-steeped black tea, white peach, lime and a fizzy finish.</p><span class="dish-cat">Beverages</span></div>
+      </article>
+      <article class="dish tilt reveal" data-cat="specials" style="--d:.16s">
+        <div class="dish-img"><span class="tag chef">Chef's Special</span><img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&w=800&q=75" alt="Brioche French toast with banana and berries" loading="lazy" width="800" height="600" /></div>
+        <div class="dish-body"><div class="dish-row"><h3>Brioche French Toast</h3><span class="price">₹450</span></div><p>Custard-soaked brioche, caramelised banana, berries and whipped mascarpone.</p><span class="dish-cat">Specials</span></div>
+      </article>
+      <article class="dish tilt reveal" data-cat="specials">
+        <div class="dish-img"><span class="tag chef">Limited</span><img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=800&q=75" alt="Layered mocha dessert jar" loading="lazy" width="800" height="600" /></div>
+        <div class="dish-body"><div class="dish-row"><h3>Mocha Cloud Affogato</h3><span class="price">₹330</span></div><p>Vanilla bean gelato drowned in a hot espresso shot, cocoa crumble on top.</p><span class="dish-cat">Specials</span></div>
+      </article>
+    </div>
+
+    <div class="menu-cta reveal">
+      <!-- ✏️ REPLACE: link "View Full Menu" to your PDF / Zomato / Swiggy menu (CONFIG.fullMenuUrl) -->
+      <a class="btn btn-dark magnetic" data-link="menu" href="#" target="_blank" rel="noopener">View Full Menu</a>
+      <a class="btn btn-outline" data-link="whatsapp-order" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3a.5.5 0 0 0 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3Z"/></svg>
+        Order on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section class="section gallery curve" id="gallery">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow reveal" style="color:var(--gold)"><span class="idx">N° 04</span> The Gallery</span>
+      <h2 class="section-title reveal" style="--d:.1s">Moments worth <em>sharing.</em></h2>
+      <p class="lead reveal" style="--d:.15s">Golden-hour corners, slow pours and plates that never make it to the table without a photo first.</p>
+    </div>
+
+    <!-- ✏️ REPLACE: all gallery photos with your real café photos (mix interior, coffee, food, people and exterior) -->
+    <div class="masonry" id="masonry">
+      <figure class="shot reveal"><span class="num">01</span><img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=700&q=75" alt="Café interior with neon café sign" loading="lazy" width="700" height="1050" /><figcaption>The corner booth</figcaption></figure>
+      <figure class="shot reveal"><span class="num">02</span><img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=700&h=700&q=75" alt="Black coffee in a white cup on a wooden table" loading="lazy" width="700" height="700" /><figcaption>First sip</figcaption></figure>
+      <figure class="shot reveal"><span class="num">03</span><img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=700&h=900&q=75" alt="A table full of brunch plates" loading="lazy" width="700" height="900" /><figcaption>Sunday spread</figcaption></figure>
+      <figure class="shot reveal"><span class="num">04</span><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=700&h=520&q=75" alt="Two friends clinking latte cups" loading="lazy" width="700" height="520" /><figcaption>Cheers to us</figcaption></figure>
+      <figure class="shot reveal"><span class="num">05</span><img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=700&h=900&q=75" alt="Café exterior with outdoor seating" loading="lazy" width="700" height="900" /><figcaption>Find us here</figcaption></figure>
+      <figure class="shot reveal"><span class="num">06</span><img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=700&h=560&q=75" alt="Friends sharing food around a table" loading="lazy" width="700" height="560" /><figcaption>Table for four</figcaption></figure>
+      <figure class="shot reveal"><span class="num">07</span><img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=700&h=880&q=75" alt="Stacked fudgy brownies" loading="lazy" width="700" height="880" /><figcaption>Sweet tooth</figcaption></figure>
+      <figure class="shot reveal"><span class="num">08</span><img src="https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=700&h=700&q=75" alt="Matcha latte beside a laptop" loading="lazy" width="700" height="700" /><figcaption>Work mode, on</figcaption></figure>
+      <figure class="shot reveal"><span class="num">09</span><img src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?auto=format&fit=crop&w=700&h=900&q=75" alt="Coffee bar counter with pendant lights" loading="lazy" width="700" height="900" /><figcaption>Behind the bar</figcaption></figure>
+      <figure class="shot reveal"><span class="num">10</span><img src="https://images.unsplash.com/photo-1481833761820-0509d3217039?auto=format&fit=crop&w=700&h=520&q=75" alt="Café window glowing at night" loading="lazy" width="700" height="520" /><figcaption>After dark</figcaption></figure>
+      <figure class="shot reveal"><span class="num">11</span><img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=700&h=900&q=75" alt="Latte art and espresso portafilters" loading="lazy" width="700" height="900" /><figcaption>The craft</figcaption></figure>
+      <figure class="shot reveal"><span class="num">12</span><img src="https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?auto=format&fit=crop&w=700&h=560&q=75" alt="Leafy garden café seating" loading="lazy" width="700" height="560" /><figcaption>Garden table</figcaption></figure>
+    </div>
+
+    <div class="gallery-foot reveal">
+      <p>Tag us <em data-cfg="instagramHandle">@aureliacafe</em> to be featured.</p>
+      <a class="btn btn-ghost" data-link="instagram" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        Follow on Instagram</a>
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo preview">
+  <button aria-label="Close photo">×</button>
+  <img alt="" />
+</div>
+
+<!-- ================= WHY VISIT ================= -->
+<section class="section why curve">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow reveal"><span class="idx">N° 05</span> Why Visit Us</span>
+      <h2 class="section-title reveal" style="--d:.1s">Your new <em>favourite</em> place.</h2>
+    </div>
+    <div class="why-grid">
+      <article class="why-card reveal">
+        <span class="why-num">01</span>
+        <span class="why-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><ellipse cx="12" cy="12" rx="6" ry="9" transform="rotate(35 12 12)"/><path d="M8.5 6.5c3 3 4 8 7 11"/></svg></span>
+        <h3>Premium Coffee</h3>
+        <p>Specialty-grade beans, roasted in small batches and brewed by people who genuinely care.</p>
+      </article>
+      <article class="why-card reveal" style="--d:.1s">
+        <span class="why-num">02</span>
+        <span class="why-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 12h18a9 9 0 0 1-18 0Z"/><path d="M8 8c0-2 2-2 2-4M13 8c0-2 2-2 2-4"/></svg></span>
+        <h3>Freshly Prepared Food</h3>
+        <p>Nothing pre-made, nothing frozen. Plates built from scratch, the moment you order.</p>
+      </article>
+      <article class="why-card reveal" style="--d:.2s">
+        <span class="why-num">03</span>
+        <span class="why-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></span>
+        <h3>Instagram-worthy Interiors</h3>
+        <p>Soft light, warm wood and little details designed to be noticed — and posted.</p>
+      </article>
+      <article class="why-card reveal" style="--d:.3s">
+        <span class="why-num">04</span>
+        <span class="why-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="4" y="5" width="16" height="10" rx="1.5"/><path d="M2 19h20"/><path d="M12 13s-3-1.7-3-3.6A1.6 1.6 0 0 1 12 8.6a1.6 1.6 0 0 1 3 .8C15 11.3 12 13 12 13Z"/></svg></span>
+        <h3>Work, Dates & Hangouts</h3>
+        <p>Fast Wi-Fi and plug points by day, candle-lit tables by night. Every plan fits here.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REVIEWS ================= -->
+<section class="section reviews curve" id="reviews">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow reveal"><span class="idx">N° 06</span> Kind Words</span>
+      <h2 class="section-title reveal" style="--d:.1s">Loved by our <em>regulars.</em></h2>
+    </div>
+
+    <div class="reviews-grid">
+      <!-- ✏️ REPLACE: your real rating + number of reviews -->
+      <div class="rating-hero reveal">
+        <div>
+          <div class="rating-num">4.8<sup>★</sup></div>
+          <div class="stars" aria-label="5 out of 5 stars" style="margin-top:14px">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg>
+          </div>
+        </div>
+        <div>
+          <h3>Rated by 500+ happy customers</h3>
+          <p>Every review is a reason we open the doors each morning. Thank you.</p>
+          <a class="g-pill glass" data-link="maps" href="#" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36a12 12 0 1 1 7.9-21l5.7-5.7A20 20 0 1 0 44 24c0-1.2-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8A12 12 0 0 1 24 12c3 0 5.8 1.1 7.9 3l5.7-5.7A20 20 0 0 0 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2A12 12 0 0 1 12.7 28l-6.5 5A20 20 0 0 0 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3a12 12 0 0 1-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.2-.1-2.4-.4-3.5z"/></svg>
+            Read us on Google
+          </a>
+        </div>
+      </div>
+
+      <!-- ✏️ REPLACE: these are sample reviews — paste your real Google reviews here -->
+      <figure class="review reveal" style="--d:.05s"><div class="stars" aria-label="5 stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg></div>
+        <blockquote>"The best cappuccino I've had outside Italy. I came for one coffee and stayed for three hours."</blockquote>
+        <figcaption class="reviewer"><span class="avatar">PS</span><div><b>Priya S.</b><small>Google Review</small></div></figcaption></figure>
+      <figure class="review reveal" style="--d:.1s"><div class="stars" aria-label="5 stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg></div>
+        <blockquote>"Our go-to date spot. Warm lights, dreamy desserts and the tiramisu is honestly unreal."</blockquote>
+        <figcaption class="reviewer"><span class="avatar">AR</span><div><b>Arjun & Riya</b><small>Google Review</small></div></figcaption></figure>
+      <figure class="review reveal" style="--d:.15s"><div class="stars" aria-label="5 stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg></div>
+        <blockquote>"Fast Wi-Fi, comfy chairs and endless flat whites. My unofficial office, three days a week."</blockquote>
+        <figcaption class="reviewer"><span class="avatar">KM</span><div><b>Karan M.</b><small>Google Review</small></div></figcaption></figure>
+      <figure class="review reveal" style="--d:.05s"><div class="stars" aria-label="5 stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg></div>
+        <blockquote>"Celebrated my birthday here and the team made it so special. Gorgeous cake, even better vibes."</blockquote>
+        <figcaption class="reviewer"><span class="avatar">NJ</span><div><b>Neha J.</b><small>Google Review</small></div></figcaption></figure>
+      <figure class="review reveal" style="--d:.1s"><div class="stars" aria-label="5 stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg></div>
+        <blockquote>"Every corner is photogenic. The pancakes look like a dream and taste even better."</blockquote>
+        <figcaption class="reviewer"><span class="avatar">SD</span><div><b>Sana D.</b><small>Instagram</small></div></figcaption></figure>
+      <figure class="review reveal" style="--d:.15s"><div class="stars" aria-label="5 stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg></div>
+        <blockquote>"Weekend brunch with live acoustic music? Sign me up every single Sunday."</blockquote>
+        <figcaption class="reviewer"><span class="avatar">VK</span><div><b>Vikram K.</b><small>Google Review</small></div></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EVENTS / OFFERS ================= -->
+<section class="section events curve" id="events">
+  <div class="container">
+    <div class="events-head"><div>
+      <span class="eyebrow reveal" style="color:var(--gold);margin-bottom:22px"><span class="idx">N° 07</span> Events &amp; Offers</span>
+      <h2 class="events-title reveal">Something's <em>always</em> brewing.</h2></div>
+      <p class="reveal" style="--d:.1s">From slow Sunday brunches to candle-lit acoustic nights — come for the coffee, stay for the moments.</p>
+    </div>
+
+    <!-- ✏️ REPLACE: event days, timings and your current offer -->
+    <div class="bento">
+      <article class="ev reveal">
+        <img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=1400&q=75" alt="Weekend brunch spread" loading="lazy" />
+        <span class="ev-when glass">Sat & Sun · 9 AM – 3 PM</span>
+        <h3>Weekend Brunch</h3>
+        <p>Bottomless coffee, golden pancakes and long lazy tables built for the whole gang.</p>
+      </article>
+      <article class="ev reveal" style="--d:.08s">
+        <img src="https://images.unsplash.com/photo-1481833761820-0509d3217039?auto=format&fit=crop&w=900&q=75" alt="Café glowing at night" loading="lazy" />
+        <span class="ev-when glass">Every Friday · 8 PM</span>
+        <h3>Live Music</h3>
+        <p>Acoustic sets, warm lights, good company.</p>
+      </article>
+      <article class="ev reveal" style="--d:.16s">
+        <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=900&q=75" alt="Espresso tools and latte art" loading="lazy" />
+        <span class="ev-when glass">Monthly · Book ahead</span>
+        <h3>Coffee Workshops</h3>
+        <p>Learn latte art and home brewing from our baristas.</p>
+      </article>
+      <article class="ev reveal" style="--d:.08s">
+        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1100&q=75" alt="Celebration chocolate cake" loading="lazy" />
+        <span class="ev-when glass">Any day · Private corners</span>
+        <h3>Birthday Celebrations</h3>
+        <p>Custom cakes, cosy decor and a table that's all yours. We'll handle the magic.</p>
+      </article>
+      <article class="ev ev-offer reveal" style="--d:.16s">
+        <span class="ev-when">Seasonal Offer</span>
+        <div>
+          <div class="big">20% off</div>
+          <h3>Winter Warmers</h3>
+          <p>On all hot chocolates and spiced lattes, weekdays 3–6 PM. Limited season only.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="events-cta glass reveal">
+      <p>Planning something special? Let's make it unforgettable.</p>
+      <a class="btn btn-gold magnetic" data-link="whatsapp-event" href="#" target="_blank" rel="noopener">Reserve your spot</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VISIT US ================= -->
+<section class="section visit curve" id="visit">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow reveal"><span class="idx">N° 08</span> Visit Us</span>
+      <h2 class="section-title reveal" style="--d:.1s">Your table is <em>waiting.</em></h2>
+    </div>
+
+    <div class="visit-grid">
+      <div class="info-card reveal">
+        <div class="info-row">
+          <span class="info-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+          <div><h4>Address</h4><p data-cfg="address">123 Placeholder Street, Your Area, Your City 000000</p></div>
+        </div>
+        <div class="info-row">
+          <span class="info-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <div style="flex:1"><h4>Opening Hours</h4>
+            <div class="hours" id="hours"></div>
+            <span class="open-now" id="openNow" hidden></span>
+          </div>
+        </div>
+        <div class="info-row">
+          <span class="info-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span>
+          <div><h4>Phone</h4><a data-link="tel" href="#" data-cfg="phone">+91 00000 00000</a></div>
+        </div>
+        <div class="info-actions">
+          <a class="btn btn-gold btn-sm" data-link="whatsapp" href="#" target="_blank" rel="noopener">Book a Table</a>
+          <a class="btn btn-dark btn-sm" data-link="tel" href="#">Call Now</a>
+          <a class="btn btn-outline btn-sm" data-link="maps" href="#" target="_blank" rel="noopener">Get Directions</a>
+        </div>
+      </div>
+
+      <div class="map reveal" style="--d:.1s">
+        <!-- ✏️ REPLACE: map location is set by CONFIG.mapQuery below -->
+        <iframe id="mapFrame" title="Map showing our café location" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=coffee%20shop&z=15&output=embed"></iframe>
+        <div class="map-pin">
+          <div><b data-cfg="name">Aurelia</b><small data-cfg="hoursShort">Open daily · 8:00 AM – 11:00 PM</small></div>
+          <a class="btn btn-gold btn-sm" data-link="maps" href="#" target="_blank" rel="noopener">Directions</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container">
+    <p class="footer-big reveal">See you for <em>coffee.</em></p>
+    <div class="footer-grid">
+      <div>
+        <a href="#home" class="logo">
+          <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 9h13v4a6 6 0 0 1-6 6h-1a6 6 0 0 1-6-6V9Z"/><path d="M17 10h1.5a2.5 2.5 0 0 1 0 5H17"/><path d="M8 3c0 1.5 1.5 1.5 1.5 3M12 3c0 1.5 1.5 1.5 1.5 3"/></svg></span>
+          <span class="logo-text"><span data-cfg="name">Aurelia</span><small>Coffee House</small></span>
+        </a>
+        <p class="brand-line">Slow coffee, honest food and a little corner of the city that feels like home.</p>
+        <div class="socials">
+          <a data-link="instagram" href="#" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a data-link="facebook" href="#" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8.5V6.8c0-.8.5-1 .9-1H17V2.1L14.2 2C11 2 10.3 4.4 10.3 6v2.5H8V12h2.3v10H14V12h2.7l.4-3.5Z"/></svg></a>
+          <a data-link="whatsapp" href="#" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3a.5.5 0 0 0 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3Z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul><li><a href="#about">Our Story</a></li><li><a href="#menu">Menu</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#events">Events</a></li></ul>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <ul><li data-cfg="address">123 Placeholder Street, Your Area, Your City 000000</li><li data-cfg="hoursShort">Open daily · 8:00 AM – 11:00 PM</li></ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul><li><a data-link="tel" href="#" data-cfg="phone">+91 00000 00000</a></li><li><a data-link="whatsapp" href="#" target="_blank" rel="noopener">WhatsApp us</a></li><li><a data-link="instagram" href="#" target="_blank" rel="noopener" data-cfg="instagramHandle">@aureliacafe</a></li></ul>
+      </div>
+    </div>
+    <div class="copyright">
+      <span>© <span id="yr">2026</span> <span data-cfg="name">Aurelia</span> Café. All rights reserved.</span>
+      <span>Crafted with love &amp; caffeine.</span>
+    </div>
+  </div>
+</footer>
+
+<a class="fab" id="fab" data-link="whatsapp" href="#" target="_blank" rel="noopener" aria-label="Book a table on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3a.5.5 0 0 0 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3Z"/></svg>
+</a>
+
+<script>
+/* =====================================================================
+   ✏️ CONFIG — EDIT YOUR CAFÉ DETAILS HERE
+   Everything on the page (buttons, links, map, footer) updates from this.
+   ===================================================================== */
+const CONFIG = {
+  name: "Aurelia",                                   // ✏️ café name (shown as "Aurelia Café")
+  city: "Your City",                                 // ✏️ city / area
+  address: "123 Placeholder Street, Your Area, Your City 000000", // ✏️ full address
+  phone: "+91 00000 00000",                          // ✏️ phone number as shown on the site
+  whatsapp: "910000000000",                          // ✏️ WhatsApp number: country code + number, digits only
+  instagram: "https://instagram.com/yourcafe",       // ✏️ Instagram link
+  instagramHandle: "@yourcafe",                      // ✏️ Instagram handle
+  facebook: "https://facebook.com/yourcafe",         // ✏️ Facebook link
+  mapsLink: "https://maps.google.com/?q=coffee+shop",// ✏️ your Google Maps share link
+  mapQuery: "coffee shop",                           // ✏️ what the embedded map shows: your café name + address
+  fullMenuUrl: "#menu",                              // ✏️ link to your full menu (PDF, Zomato, Swiggy...)
+  year: "2019",                                      // ✏️ year you opened
+  hoursShort: "Open daily · 8:00 AM – 11:00 PM",     // ✏️ short timings line
+  // ✏️ opening hours, 24h format. Sunday = 0 ... Saturday = 6. Use null for closed days.
+  hours: { 0:["08:00","23:00"], 1:["08:00","23:00"], 2:["08:00","23:00"], 3:["08:00","23:00"], 4:["08:00","23:00"], 5:["08:00","23:30"], 6:["08:00","23:30"] }
+};
+
+(function () {
+  const $ = (s, c = document) => c.querySelector(s);
+  const $$ = (s, c = document) => [...c.querySelectorAll(s)];
+  document.documentElement.classList.add("js");
+
+  /* ---------- fill config into the page ---------- */
+  $$("[data-cfg]").forEach(el => { const v = CONFIG[el.dataset.cfg]; if (v) el.textContent = v; });
+  const wa = msg => `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`;
+  const links = {
+    "whatsapp": wa(`Hi! I would like to book a table at ${CONFIG.name} Café.`),
+    "whatsapp-order": wa(`Hi! I would like to place an order from ${CONFIG.name} Café.`),
+    "whatsapp-event": wa(`Hi! I'd love to know more about events and celebrations at ${CONFIG.name} Café.`),
+    "tel": `tel:${CONFIG.phone.replace(/[^\d+]/g, "")}`,
+    "instagram": CONFIG.instagram,
+    "facebook": CONFIG.facebook,
+    "maps": CONFIG.mapsLink,
+    "menu": CONFIG.fullMenuUrl
+  };
+  $$("[data-link]").forEach(a => { const h = links[a.dataset.link]; if (h) a.href = h; if (h && h.startsWith("#")) a.removeAttribute("target"); });
+  $("#mapFrame").src = `https://maps.google.com/maps?q=${encodeURIComponent(CONFIG.mapQuery)}&z=15&output=embed`;
+  $("#yr").textContent = new Date().getFullYear();
+
+  /* ---------- opening hours + open now ---------- */
+  const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+  const fmt = t => { let [h, m] = t.split(":").map(Number); const ap = h >= 12 ? "PM" : "AM"; h = h % 12 || 12; return `${h}:${String(m).padStart(2,"0")} ${ap}`; };
+  const order = [1,2,3,4,5,6,0];
+  const groups = [];
+  order.forEach(d => { const key = CONFIG.hours[d] ? CONFIG.hours[d].join("-") : "closed"; const last = groups[groups.length-1]; if (last && last.key === key) last.days.push(d); else groups.push({ key, days:[d] }); });
+  $("#hours").innerHTML = groups.map(g => {
+    const label = g.days.length > 1 ? `${days[g.days[0]].slice(0,3)} – ${days[g.days[g.days.length-1]].slice(0,3)}` : days[g.days[0]];
+    const val = g.key === "closed" ? "Closed" : g.key.split("-").map(fmt).join(" – ");
+    return `<span>${label}</span><span>${val}</span>`;
+  }).join("");
+  const now = new Date(), today = CONFIG.hours[now.getDay()], badge = $("#openNow");
+  if (today) {
+    const mins = t => { const [h, m] = t.split(":").map(Number); return h*60+m; };
+    const cur = now.getHours()*60 + now.getMinutes();
+    const open = cur >= mins(today[0]) && cur < mins(today[1]);
+    badge.textContent = open ? `Open now · until ${fmt(today[1])}` : `Closed now · opens ${fmt(today[0])}`;
+    badge.classList.toggle("closed", !open);
+  } else { badge.textContent = "Closed today"; badge.classList.add("closed"); }
+  badge.hidden = false;
+
+  /* ---------- navbar: frosted on scroll + active link ---------- */
+  const nav = $("#nav"), fab = $("#fab");
+  const onScroll = () => { const y = window.scrollY; nav.classList.toggle("scrolled", y > 40); fab.classList.toggle("show", y > 600); };
+  onScroll(); window.addEventListener("scroll", onScroll, { passive: true });
+
+  const navLinks = $$(".nav-links a");
+  const spy = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) navLinks.forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#" + e.target.id)); });
+  }, { rootMargin: "-45% 0px -50% 0px" });
+  ["home","about","menu","gallery","reviews","visit"].forEach(id => { const s = document.getElementById(id); if (s) spy.observe(s); });
+
+  /* ---------- mobile drawer ---------- */
+  const burger = $("#burger"), drawer = $("#drawer");
+  const setDrawer = open => {
+    drawer.classList.toggle("open", open); drawer.setAttribute("aria-hidden", !open);
+    burger.setAttribute("aria-expanded", open); burger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    document.body.style.overflow = open ? "hidden" : "";
+  };
+  burger.addEventListener("click", () => setDrawer(!drawer.classList.contains("open")));
+  $$("[data-close]", drawer).forEach(el => el.addEventListener("click", () => setDrawer(false)));
+  document.addEventListener("keydown", e => { if (e.key === "Escape") { setDrawer(false); closeLb(); } });
+
+  /* ---------- scroll reveal ---------- */
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+  $$(".reveal").forEach(el => io.observe(el));
+
+  /* ---------- menu filter ---------- */
+  const filters = $$(".filter"), dishes = $$(".dish");
+  filters.forEach(btn => btn.addEventListener("click", () => {
+    const cat = btn.dataset.filter;
+    filters.forEach(b => b.setAttribute("aria-pressed", b === btn));
+    dishes.forEach((d, i) => {
+      const show = cat === "all" || d.dataset.cat === cat;
+      d.classList.toggle("hide", !show);
+      d.classList.remove("pop");
+      if (show) { d.classList.add("in"); void d.offsetWidth; d.style.animationDelay = (i % 6) * 0.05 + "s"; d.classList.add("pop"); }
+    });
+  }));
+
+  /* ---------- parallax ---------- */
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const px = $$("[data-parallax]");
+  if (!reduce && px.length) {
+    let ticking = false;
+    const run = () => {
+      const vh = window.innerHeight;
+      px.forEach(el => {
+        const r = el.parentElement.getBoundingClientRect();
+        if (r.bottom < -100 || r.top > vh + 100) return;
+        const speed = parseFloat(el.dataset.parallax);
+        const offset = (r.top + r.height / 2 - vh / 2) * speed;
+        el.style.transform = `translate3d(0, ${-offset}px, 0)`;
+      });
+      ticking = false;
+    };
+    window.addEventListener("scroll", () => { if (!ticking) { requestAnimationFrame(run); ticking = true; } }, { passive: true });
+    run();
+  }
+
+
+  /* ---------- cinematic intro ---------- */
+  const intro = $("#intro"), root = document.documentElement;
+  const startHero = () => root.classList.add("ready");
+  if (reduce || sessionStorage.getItem("introSeen")) { intro.remove(); startHero(); }
+  else {
+    document.body.style.overflow = "hidden";
+    const cnt = $("#introCount"), line = $("#introLine"), t0 = performance.now(), dur = 1700;
+    const tick = t => {
+      const k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+      cnt.textContent = Math.round(e * 100); line.style.transform = `scaleX(${e})`;
+      if (k < 1) requestAnimationFrame(tick);
+      else setTimeout(() => { intro.classList.add("done"); document.body.style.overflow = ""; sessionStorage.setItem("introSeen", "1"); setTimeout(startHero, 250); setTimeout(() => intro.remove(), 1300); }, 180);
+    };
+    requestAnimationFrame(tick);
+  }
+
+  /* ---------- scroll progress ---------- */
+  const bar = $("#progress");
+  const prog = () => { const h = document.documentElement.scrollHeight - innerHeight; bar.style.transform = `scaleX(${h > 0 ? scrollY / h : 0})`; };
+  prog(); addEventListener("scroll", prog, { passive: true });
+
+  /* ---------- image curtain reveal ---------- */
+
+  /* ---------- manifesto words + counters ---------- */
+  $$("[data-words]").forEach(el => {
+    const wrap = node => {
+      [...node.childNodes].forEach(c => {
+        if (c.nodeType === 3) {
+          const frag = document.createDocumentFragment();
+          c.textContent.split(/(\s+)/).forEach(t => { if (!t) return; if (/^\s+$/.test(t)) frag.append(t); else { const sp = document.createElement("span"); sp.className = "mw"; sp.textContent = t; frag.append(sp); } });
+          c.replaceWith(frag);
+        } else wrap(c);
+      });
+    };
+    wrap(el);
+    const words = $$(".mw", el);
+    const light = () => {
+      const r = el.getBoundingClientRect(), vh = innerHeight;
+      const k = Math.min(1, Math.max(0, (vh * .85 - r.top) / (r.height + vh * .35)));
+      const lit = Math.round(k * words.length);
+      words.forEach((w, i) => w.classList.toggle("lit", i < lit));
+    };
+    light(); addEventListener("scroll", light, { passive: true });
+  });
+  const cio = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return; cio.unobserve(e.target);
+    const el = e.target, end = +el.dataset.count, suf = el.dataset.suffix || "", t0 = performance.now();
+    const step = t => { const k = Math.min(1, (t - t0) / 1600), v = Math.round((1 - Math.pow(1 - k, 4)) * end); el.textContent = v + (k === 1 ? suf : ""); if (k < 1) requestAnimationFrame(step); };
+    requestAnimationFrame(step);
+  }), { threshold: .6 });
+  $$("[data-count]").forEach(el => cio.observe(el));
+
+  /* ---------- desktop-only micro-interactions ---------- */
+  const fine = matchMedia("(pointer:fine) and (min-width:980px)").matches;
+  if (fine && !reduce) {
+    // custom cursor
+    const cur = $("#cursor"), dot = $("#cursorDot");
+    let mx = innerWidth / 2, my = innerHeight / 2, cx = mx, cy = my;
+    addEventListener("mousemove", e => { mx = e.clientX; my = e.clientY; dot.style.transform = `translate(${mx}px,${my}px)`; }, { passive: true });
+    const loop = () => { cx += (mx - cx) * .16; cy += (my - cy) * .16; cur.style.transform = `translate(${cx}px,${cy}px)`; requestAnimationFrame(loop); };
+    loop();
+    $$("a,button,.filter").forEach(el => { el.addEventListener("mouseenter", () => cur.classList.add("hover")); el.addEventListener("mouseleave", () => cur.classList.remove("hover")); });
+    $$(".shot").forEach(el => { el.addEventListener("mouseenter", () => cur.classList.add("view")); el.addEventListener("mouseleave", () => cur.classList.remove("view")); });
+
+    // magnetic buttons
+    $$(".magnetic").forEach(b => {
+      b.addEventListener("mousemove", e => { const r = b.getBoundingClientRect(); const x = e.clientX - r.left - r.width / 2, y = e.clientY - r.top - r.height / 2; b.style.transform = `translate(${x * .25}px,${y * .35}px)`; });
+      b.addEventListener("mouseleave", () => { b.style.transform = ""; });
+    });
+
+    // 3D tilt + light sweep on menu cards
+    $$(".tilt").forEach(c => {
+      c.addEventListener("mousemove", e => { const r = c.getBoundingClientRect(); const px = (e.clientX - r.left) / r.width, py = (e.clientY - r.top) / r.height;
+        c.style.setProperty("--ry", (px - .5) * 8 + "deg"); c.style.setProperty("--rx", (.5 - py) * 8 + "deg");
+        c.style.setProperty("--mx", px * 100 + "%"); c.style.setProperty("--my", py * 100 + "%"); });
+      c.addEventListener("mouseleave", () => { c.style.setProperty("--rx", "0deg"); c.style.setProperty("--ry", "0deg"); });
+    });
+
+    // hero depth: image + beans drift with the mouse
+    const hero = $(".hero"), inner = $("#heroInner"), beans = $$(".bean");
+    hero.addEventListener("mousemove", e => { const x = e.clientX / innerWidth - .5, y = e.clientY / innerHeight - .5;
+      inner.style.transform = `translate(${x * -22}px,${y * -16}px)`;
+      beans.forEach((b, i) => { b.style.translate = `${x * (30 + i * 14)}px ${y * (30 + i * 14)}px`; }); });
+  }
+
+  /* ---------- gallery lightbox ---------- */
+  const lb = $("#lightbox"), lbImg = $("img", lb);
+  function closeLb() { lb.classList.remove("open"); }
+  $$(".shot").forEach(s => s.addEventListener("click", () => {
+    const img = $("img", s);
+    lbImg.src = img.src.replace(/w=\d+/, "w=1600").replace(/&h=\d+/, "");
+    lbImg.alt = img.alt; lb.classList.add("open");
+  }));
+  lb.addEventListener("click", e => { if (e.target !== lbImg) closeLb(); });
+})();
+</script>
+</body>
+</html>

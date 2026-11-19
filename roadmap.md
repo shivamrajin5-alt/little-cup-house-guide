@@ -4,4 +4,5 @@
 - [x] Show the site in the app preview + page titles
 - [x] Swap in the real restaurant (New Hungry Hope, Patna): details, menu & prices, reviews, real photos
 - [x] Polish the original logo (playful version rejected) + stronger Google search details
+- [x] Local SEO: titles, descriptions, Restaurant data, share image, sitemap, "Find us in Patna" section
 - [ ] Waiting on the owner: confirm WhatsApp number, Facebook page link, higher-quality photos of the dining room

@@ -30,6 +30,7 @@ use the editor.
 <!-- LOVABLE:END -->
 
 ## Project rules
-- The café website is one standalone file, `public/cafe.html` (the latest Files copy is the highest-numbered `cafe-website-vN.html`); `/` just frames it full-screen. Why: the owner asked for a single self-contained HTML file they can host anywhere.
+- The café website is one standalone file, `public/cafe.html` (the latest Files copy is the highest-numbered `cafe-website-vN.html`); `/` returns that file's HTML directly through a server GET handler (raw import), so crawlers see the full page at the main address. Why: the owner asked for a single self-contained HTML file they can host anywhere, and local SEO needs the content at `/`, not inside a frame.
 - Photos in `public/cafe.html` point at CDN assets (pointers in `src/assets/cafe/`); the Files copy has them inlined as data URIs. Why: the preview stays light while the Files copy works on any host.
 - All café details live in the `CONFIG` block at the bottom of that file; links, map and text fill from it. Why: one place to edit.
+- SEO: canonical, og:url and JSON-LD `@id`s in `public/cafe.html` use the published site address; `public/sitemap.xml` lists `/` only. Why: `/cafe.html` is the same page and must not compete with `/` in search.

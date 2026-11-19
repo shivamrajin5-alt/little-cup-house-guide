@@ -30,6 +30,6 @@ use the editor.
 <!-- LOVABLE:END -->
 
 ## Project rules
-- The café website is one standalone file, `public/cafe.html` (mirrored to Files as `cafe-website.html`); `/` just frames it full-screen. Why: the owner asked for a single self-contained HTML file they can host anywhere.
+- The café website is one standalone file, `public/cafe.html` (the latest Files copy is the highest-numbered `cafe-website-vN.html`); `/` just frames it full-screen. Why: the owner asked for a single self-contained HTML file they can host anywhere.
 - Photos in `public/cafe.html` point at CDN assets (pointers in `src/assets/cafe/`); the Files copy has them inlined as data URIs. Why: the preview stays light while the Files copy works on any host.
 - All café details live in the `CONFIG` block at the bottom of that file; links, map and text fill from it. Why: one place to edit.

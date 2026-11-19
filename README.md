@@ -1,4 +1,4 @@
-# Little Cup House Guide
+# cafe and restaurant guide 
 
 Create a premium, modern, stylish and visually stunning single-page café website.
 

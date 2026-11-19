@@ -1,20 +1,20 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-// The café website is a standalone single HTML file (public/cafe.html).
+// The restaurant website is a standalone single HTML file (public/cafe.html).
 // This route shows it full-screen in the preview.
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Aurelia Café — Specialty Coffee, Brunch & Desserts" },
+      { title: "New Hungry Hope Restaurant — Tandoor, Biryani & Chinese, Patna" },
       {
         name: "description",
         content:
-          "A cozy specialty coffee house with fresh brunch, indulgent desserts and Instagram-worthy interiors. Book a table on WhatsApp.",
+          "Family restaurant on Danapur–Khagaul Road, Mustafapur, Patna. Tandoori, biryani, momos and Indo-Chinese. Dine-in, takeaway, delivery and birthday parties.",
       },
-      { property: "og:title", content: "Aurelia Café — Where Every Cup Feels Like Home" },
+      { property: "og:title", content: "New Hungry Hope Restaurant — Come Hungry, Leave Happy" },
       {
         property: "og:description",
-        content: "Specialty coffee, fresh food and unforgettable vibes.",
+        content: "Tandoor, biryani, momos and Indo-Chinese favourites on Danapur–Khagaul Road, Patna.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -27,7 +27,7 @@ function Index() {
   return (
     <iframe
       src="/cafe.html"
-      title="Aurelia Café website"
+      title="New Hungry Hope Restaurant website"
       className="fixed inset-0 h-full w-full border-0"
     />
   );

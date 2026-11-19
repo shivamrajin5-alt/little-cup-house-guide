@@ -4,37 +4,35 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
-<!-- ✏️ REPLACE: café name, city and description in the SEO tags below -->
-<title>Aurelia Café — Specialty Coffee, Brunch & Desserts in Your City</title>
-<meta name="description" content="Aurelia Café is a cozy specialty coffee house in Your City. Hand-brewed coffee, fresh brunch, indulgent desserts and Instagram-worthy interiors. Book a table on WhatsApp." />
+<!-- ✏️ SEO tags: restaurant name, area and description -->
+<title>New Hungry Hope Restaurant — Tandoor, Biryani & Chinese in Mustafapur, Patna</title>
+<meta name="description" content="New Hungry Hope is a family restaurant on Danapur–Khagaul Road, Mustafapur, Patna. Tandoori, biryani, momos, Indo-Chinese and North Indian food. Dine-in, takeaway, delivery and birthday parties." />
 <meta name="theme-color" content="#160e0a" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Aurelia Café — Where Every Cup Feels Like Home" />
-<meta property="og:description" content="Specialty coffee, fresh food and unforgettable vibes in Your City." />
-<meta property="og:image" content="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1200&q=80" />
+<meta property="og:title" content="New Hungry Hope Restaurant — Come Hungry, Leave Happy" />
+<meta property="og:description" content="Tandoor, biryani, momos and Indo-Chinese favourites on Danapur–Khagaul Road, Patna." />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Aurelia Café — Where Every Cup Feels Like Home" />
-<meta name="twitter:description" content="Specialty coffee, fresh food and unforgettable vibes in Your City." />
-<meta name="twitter:image" content="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1200&q=80" />
+<meta name="twitter:title" content="New Hungry Hope Restaurant — Come Hungry, Leave Happy" />
+<meta name="twitter:description" content="Tandoor, biryani, momos and Indo-Chinese favourites on Danapur–Khagaul Road, Patna." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="preconnect" href="https://images.unsplash.com" />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="preload" as="image" href="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=2000&q=75" />
+<link rel="preload" as="image" href="/__l5e/assets-v1/030c0146-2b59-4f2c-8938-eee598053e25/hero-kadhai-paneer.jpg" />
 
-<!-- ✏️ REPLACE: structured data for Google (name, address, phone, hours) -->
+<!-- structured data for Google (name, address, phone, hours) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "CafeOrCoffeeShop",
-  "name": "Aurelia Café",
-  "servesCuisine": ["Specialty Coffee", "Brunch", "Desserts"],
-  "address": { "@type": "PostalAddress", "streetAddress": "123 Placeholder Street", "addressLocality": "Your City", "addressCountry": "IN" },
-  "telephone": "+91 00000 00000",
-  "openingHours": "Mo-Su 08:00-23:00",
-  "priceRange": "₹₹",
-  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "500" }
+  "@type": "Restaurant",
+  "name": "New Hungry Hope Restaurant",
+  "servesCuisine": ["North Indian", "Chinese", "Tandoori", "Biryani", "Rolls", "Momos"],
+  "address": { "@type": "PostalAddress", "streetAddress": "Danapur - Khagaul Rd, near Vijay Path, near Danapur Station, Mustafapur", "addressLocality": "Patna", "addressRegion": "Bihar", "postalCode": "801105", "addressCountry": "IN" },
+  "geo": { "@type": "GeoCoordinates", "latitude": 25.599223, "longitude": 85.042463 },
+  "telephone": "+91 612 354 4283",
+  "openingHours": ["Mo-Th 12:00-22:30", "Fr-Su 12:00-23:00"],
+  "priceRange": "₹200–400",
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.3", "reviewCount": "119" }
 }
 </script>
 
@@ -573,6 +571,18 @@ img:not(.raw){filter:saturate(.86) contrast(1.06) sepia(.12) brightness(.98)}
   .js .reveal,.js .hero .intro-fade{opacity:1;transform:none}
   .js .img-reveal{clip-path:none}.hero h1 .w>span{transform:none}.intro-screen{display:none}.manifesto-text .mw{opacity:1}
 }
+
+/* ===== New Hungry Hope additions ===== */
+.hero-media img{object-position:68% 50%}
+.bean.ember{width:6px;color:var(--caramel-2);opacity:.8;filter:drop-shadow(0 0 6px var(--caramel-2)) drop-shadow(0 0 14px rgba(224,169,101,.6));animation-name:rise}
+@keyframes rise{0%{transform:translate(0,0);opacity:0}15%{opacity:.9}70%{opacity:.5}100%{transform:translate(22px,-260px);opacity:0}}
+.stars .star-part svg{opacity:.35}.stars .star-off svg{opacity:.25}
+.menu-note{margin-top:26px;text-align:center;font-size:13px;color:var(--muted)}
+.ev-offer .big{font-size:clamp(44px,6vw,72px)}
+.intro-word{white-space:nowrap}
+.logo-text{white-space:nowrap}
+@media (max-width:420px){.logo-text{font-size:19px}.logo-text small{letter-spacing:.24em}}
+@media (max-width:600px){.intro-word{font-size:clamp(34px,10vw,64px)!important;white-space:normal;text-align:center}}
 </style>
 </head>
 
@@ -581,12 +591,12 @@ img:not(.raw){filter:saturate(.86) contrast(1.06) sepia(.12) brightness(.98)}
   =====================================================================
   ✏️  HOW TO CUSTOMISE THIS WEBSITE
   1. Scroll to the bottom <script> and edit the CONFIG block
-     (café name, city, phone, WhatsApp, Instagram, Facebook, Maps, hours, year).
+     (name, area, phones, WhatsApp, Instagram, Maps, Zomato, hours, year).
      Every button, link and the map update automatically.
-  2. Search this file for "✏️ REPLACE" to find every photo, menu item,
-     price, review and offer you should swap for your real content.
-  3. Photos: replace each src="https://images.unsplash.com/..." with your own
-     image URL or a local file such as src="images/latte.jpg".
+  2. Search this file for "✏️" to find every photo, menu item,
+     price, review and offer you may want to update.
+  3. Photos: replace any src="..." with your own image URL
+     or a local file such as src="images/biryani.jpg".
   =====================================================================
 -->
 
@@ -595,8 +605,8 @@ img:not(.raw){filter:saturate(.86) contrast(1.06) sepia(.12) brightness(.98)}
 <!-- cinematic intro (plays once per visit) -->
 <div class="intro-screen" id="intro" aria-hidden="true">
   <div class="intro-inner">
-    <span class="intro-word"><span data-cfg="name">Aurelia</span> <em>café</em></span>
-    <span class="intro-sub">Slow coffee · Est. <span data-cfg="year">2019</span></span>
+    <span class="intro-word"><span data-cfg="name">New Hungry Hope</span></span>
+    <span class="intro-sub">Restaurant · Est. <span data-cfg="year">2024</span> · Patna</span>
   </div>
   <span class="intro-count" id="introCount">0</span>
   <span class="intro-line" id="introLine"></span>
@@ -609,11 +619,9 @@ img:not(.raw){filter:saturate(.86) contrast(1.06) sepia(.12) brightness(.98)}
 <header class="nav" id="nav">
   <div class="container">
     <a href="#home" class="logo" aria-label="Home">
-      <!-- ✏️ REPLACE: swap this icon for your logo image if you have one: <img src="logo.png" alt="Café logo" height="42"> -->
-      <span class="logo-mark" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 9h13v4a6 6 0 0 1-6 6h-1a6 6 0 0 1-6-6V9Z"/><path d="M17 10h1.5a2.5 2.5 0 0 1 0 5H17"/><path d="M8 3c0 1.5 1.5 1.5 1.5 3M12 3c0 1.5 1.5 1.5 1.5 3"/></svg>
-      </span>
-      <span class="logo-text"><span data-cfg="name">Aurelia</span><small>Coffee House</small></span>
+      <!-- ✏️ swap this icon for your logo image if you like: <img src="logo.png" alt="New Hungry Hope logo" height="42"> -->
+      <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 18h18"/><path d="M5 18a7 7 0 0 1 14 0"/><path d="M12 11V9"/><path d="M10.5 9h3"/><path d="M8 14.5a4 4 0 0 1 2.5-2"/></svg></span>
+      <span class="logo-text"><span data-cfg="name">New Hungry Hope</span><small>Restaurant · Patna</small></span>
     </a>
     <nav aria-label="Primary">
       <ul class="nav-links">
@@ -644,8 +652,8 @@ img:not(.raw){filter:saturate(.86) contrast(1.06) sepia(.12) brightness(.98)}
     </ul>
     <div class="drawer-foot">
       <a class="btn btn-gold" data-link="whatsapp" href="#" target="_blank" rel="noopener">Book a Table</a>
-      <a class="btn btn-ghost" data-link="tel" href="#">Call <span data-cfg="phone">+91 00000 00000</span></a>
-      <p data-cfg="hoursShort">Open daily · 8:00 AM – 11:00 PM</p>
+      <a class="btn btn-ghost" data-link="tel" href="#">Call <span data-cfg="phone">0612 354 4283</span></a>
+      <p data-cfg="hoursShort">Open daily · 12 PM – 10:30 PM</p>
     </div>
   </aside>
 </div>
@@ -655,13 +663,13 @@ img:not(.raw){filter:saturate(.86) contrast(1.06) sepia(.12) brightness(.98)}
 <!-- ================= HERO ================= -->
 <section class="hero" id="home">
   <div class="hero-media" data-parallax="0.25"><div class="hero-media-inner" id="heroInner">
-    <!-- ✏️ REPLACE: hero photo (wide, dark, cinematic works best — latte art, interior, pour-over) -->
-    <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=2000&q=75" alt="Barista slowly pouring a hand-brewed coffee in warm light" fetchpriority="high" width="2000" height="1333" />
+    <!-- ✏️ hero photo -->
+    <img src="/__l5e/assets-v1/030c0146-2b59-4f2c-8938-eee598053e25/hero-kadhai-paneer.jpg" alt="Kadhai paneer simmering in a black iron kadhai" fetchpriority="high" width="1920" height="1200" />
   </div></div>
   <div class="hero-frame" aria-hidden="true"></div>
-  <span class="hero-side" aria-hidden="true">Vol. 01 — The Slow Coffee Issue</span>
-  <div class="hero-meta" aria-hidden="true"><b>N° 01</b>Est. <span data-cfg="year">2019</span> · <span data-cfg="city">Your City</span></div>
-  <p class="hero-caption" aria-hidden="true"><span>Fig. 01</span>The pour-over ritual — four minutes, one perfect cup.</p>
+  <span class="hero-side" aria-hidden="true">Vol. 02 — Two Years of Good Food</span>
+  <div class="hero-meta" aria-hidden="true"><b>N° 01</b>Est. <span data-cfg="year">2024</span> · <span data-cfg="city">Mustafapur, Patna</span></div>
+  <p class="hero-caption" aria-hidden="true"><span>Fig. 01</span>Kadhai paneer — tossed in the iron kadhai, served bubbling.</p>
 
   <div class="fx" aria-hidden="true">
     <svg class="steam" viewBox="0 0 180 320">
@@ -669,27 +677,27 @@ img:not(.raw){filter:saturate(.86) contrast(1.06) sepia(.12) brightness(.98)}
       <path d="M95 300 C 55 240, 135 200, 95 140 S 115 40, 95 10"/>
       <path d="M130 300 C 90 240, 170 200, 130 140 S 150 40, 130 10"/>
     </svg>
-    <span class="bean" style="left:8%;top:22%;animation-duration:13s"><svg viewBox="0 0 24 32"><ellipse cx="12" cy="16" rx="10" ry="14" fill="currentColor"/><path d="M12 3c-4 6 4 20 0 26" stroke="#140d09" stroke-width="1.6" fill="none" opacity=".6"/></svg></span>
-    <span class="bean" style="left:46%;top:14%;width:18px;animation-duration:17s;animation-delay:-4s"><svg viewBox="0 0 24 32"><ellipse cx="12" cy="16" rx="10" ry="14" fill="currentColor"/><path d="M12 3c-4 6 4 20 0 26" stroke="#140d09" stroke-width="1.6" fill="none" opacity=".6"/></svg></span>
-    <span class="bean" style="right:6%;top:30%;width:30px;animation-duration:15s;animation-delay:-8s"><svg viewBox="0 0 24 32"><ellipse cx="12" cy="16" rx="10" ry="14" fill="currentColor"/><path d="M12 3c-4 6 4 20 0 26" stroke="#140d09" stroke-width="1.6" fill="none" opacity=".6"/></svg></span>
-    <span class="bean" style="right:30%;top:58%;width:16px;animation-duration:19s;animation-delay:-2s"><svg viewBox="0 0 24 32"><ellipse cx="12" cy="16" rx="10" ry="14" fill="currentColor"/><path d="M12 3c-4 6 4 20 0 26" stroke="#140d09" stroke-width="1.6" fill="none" opacity=".6"/></svg></span>
-    <span class="bean" style="left:24%;top:8%;width:20px;animation-duration:21s;animation-delay:-10s"><svg viewBox="0 0 24 32"><ellipse cx="12" cy="16" rx="10" ry="14" fill="currentColor"/><path d="M12 3c-4 6 4 20 0 26" stroke="#140d09" stroke-width="1.6" fill="none" opacity=".6"/></svg></span>
+    <span class="bean ember" style="left:8%;top:62%;animation-duration:9s"><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="4" fill="currentColor"/></svg></span>
+    <span class="bean ember" style="left:46%;top:74%;width:5px;animation-duration:11s;animation-delay:-4s"><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="4" fill="currentColor"/></svg></span>
+    <span class="bean ember" style="right:9%;top:70%;width:8px;animation-duration:10s;animation-delay:-6s"><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="4" fill="currentColor"/></svg></span>
+    <span class="bean ember" style="right:30%;top:82%;width:4px;animation-duration:12s;animation-delay:-2s"><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="4" fill="currentColor"/></svg></span>
+    <span class="bean ember" style="left:24%;top:88%;width:6px;animation-duration:13s;animation-delay:-8s"><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="4" fill="currentColor"/></svg></span>
+    <span class="bean ember" style="right:18%;top:90%;width:5px;animation-duration:8s;animation-delay:-3s"><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="4" fill="currentColor"/></svg></span>
   </div>
 
   <div class="container">
-    <span class="eyebrow hero-eyebrow intro-fade">Specialty Coffee House<span class="hide-sm">&nbsp;· <span data-cfg="city">Your City</span></span></span>
-    <h1 aria-label="Where Every Cup Feels Like Home"><span aria-hidden="true"><span class="w"><span style="--i:0">Where</span></span> <span class="w"><span style="--i:1">Every</span></span> <span class="w"><span style="--i:2">Cup</span></span> <em><span class="w"><span style="--i:3">Feels</span></span> <span class="w"><span style="--i:4">Like</span></span> <span class="w"><span style="--i:5">Home</span></span></em></span></h1>
-    <p class="hero-sub intro-fade" style="--d:.7s">Specialty coffee, fresh food and unforgettable vibes in <span data-cfg="city">Your City</span>.</p>
+    <span class="eyebrow hero-eyebrow intro-fade">Family Restaurant<span class="hide-sm">&nbsp;· Danapur–Khagaul Road, Patna</span></span>
+    <h1 aria-label="Come hungry, leave happy"><span aria-hidden="true"><span class="w"><span style="--i:0">Come</span></span> <span class="w"><span style="--i:1">hungry,</span></span> <em><span class="w"><span style="--i:2">leave</span></span> <span class="w"><span style="--i:3">happy.</span></span></em></span></h1>
+    <p class="hero-sub intro-fade" style="--d:.7s">Sizzling tandoor, fragrant biryani, momos and Indo-Chinese favourites — served warm in <span data-cfg="city">Mustafapur, Patna</span>.</p>
     <div class="hero-ctas intro-fade" style="--d:.85s">
       <a href="#menu" class="btn btn-gold magnetic">Explore Menu
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <a href="#" data-link="whatsapp" target="_blank" rel="noopener" class="btn btn-ghost magnetic">Book a Table</a>
     </div>
     <div class="hero-stats intro-fade" style="--d:1s">
-      <!-- ✏️ REPLACE: your real Google rating -->
-      <div class="stat glass"><i><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg></i><span><b>4.8★</b> Google rating</span></div>
-      <div class="stat glass"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 9h13v4a6 6 0 0 1-6 6h-1a6 6 0 0 1-6-6V9Z"/><path d="M17 10h1.5a2.5 2.5 0 0 1 0 5H17"/></svg></i><span><b>Freshly</b> brewed daily</span></div>
-      <div class="stat glass"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 11 12 4l9 7v9H3z"/><path d="M9 20v-6h6v6"/></svg></i><span><b>Cozy</b> ambience</span></div>
+      <div class="stat glass"><i><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg></i><span><b><span data-cfg="rating">4.3</span>★</b> on Google</span></div>
+      <div class="stat glass"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3c2 3 5 4.5 5 9a5 5 0 0 1-10 0c0-2 1-3.5 2-4.5 0 2 1 3 2 3 0-3-1-5 1-7.5Z"/></svg></i><span><b>Fresh</b> from the tandoor</span></div>
+      <div class="stat glass"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 12h16M6 12V8a6 6 0 0 1 12 0v4M5 12l1 8h12l1-8"/></svg></i><span><b>₹200–400</b> per person</span></div>
     </div>
   </div>
   <span class="scroll-cue" aria-hidden="true">Scroll</span>
@@ -697,8 +705,8 @@ img:not(.raw){filter:saturate(.86) contrast(1.06) sepia(.12) brightness(.98)}
 
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    <span>Single-origin espresso</span><span>Slow mornings</span><span>Fresh-baked every dawn</span><span>Latte art therapy</span><span>Brunch till late</span><span>Good company</span>
-    <span>Single-origin espresso</span><span>Slow mornings</span><span>Fresh-baked every dawn</span><span>Latte art therapy</span><span>Brunch till late</span><span>Good company</span>
+    <span>Fresh from the tandoor</span><span>Biryani by the plate</span><span>Momos, steamed &amp; fried</span><span>Indo-Chinese wok classics</span><span>Birthday &amp; party hall</span><span>Dine-in · Takeaway · Delivery</span>
+    <span>Fresh from the tandoor</span><span>Biryani by the plate</span><span>Momos, steamed &amp; fried</span><span>Indo-Chinese wok classics</span><span>Birthday &amp; party hall</span><span>Dine-in · Takeaway · Delivery</span>
   </div>
 </div>
 
@@ -707,39 +715,39 @@ img:not(.raw){filter:saturate(.86) contrast(1.06) sepia(.12) brightness(.98)}
   <div class="container about-grid">
     <div class="about-media reveal">
       <div class="about-photo img-reveal">
-        <!-- ✏️ REPLACE: a wide shot of your café interior -->
-        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1100&q=75" alt="Warm, sunlit café interior with wooden tables and plants" loading="lazy" width="1100" height="1375" />
+        <!-- ✏️ a wide shot of the dining room -->
+        <img src="/__l5e/assets-v1/f2417b2d-3d05-4b22-bf93-51dad8f420db/dining-room-neon.jpg" alt="Glowing sign in the dining room reading 'Nothing brings people together like good food'" loading="lazy" width="360" height="640" />
       </div>
       <div class="about-small img-reveal" style="transition-delay:.3s">
-        <!-- ✏️ REPLACE: a close-up of your signature coffee -->
-        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=75" alt="Close-up of a cappuccino with leaf latte art" loading="lazy" width="600" height="600" />
+        <!-- ✏️ a close-up of your signature dish -->
+        <img src="/__l5e/assets-v1/dd17718d-eba3-4bbe-8d14-964fdf0d1bc6/tandoori-chicken.jpg" alt="Tandoori chicken served with onion rings and lemon" loading="lazy" width="800" height="449" />
       </div>
-      <div class="badge-float"><b>Since <span data-cfg="year">2019</span></b><span>Brewing happiness daily</span></div>
+      <div class="badge-float"><b>Since <span data-cfg="year">2024</span></b><span>Serving Patna every day</span></div>
       <div class="spin-badge" aria-hidden="true">
-        <svg viewBox="0 0 120 120"><defs><path id="circ" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs><circle cx="60" cy="60" r="58" fill="#f8f2e9"/><text><textPath href="#circ">HANDCRAFTED · SLOW BREWED · WITH LOVE ·</textPath></text><text x="60" y="68" text-anchor="middle" style="font-family:Fraunces,serif;font-size:24px;letter-spacing:0;fill:#c98a4b">✦</text></svg>
+        <svg viewBox="0 0 120 120"><defs><path id="circ" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs><circle cx="60" cy="60" r="58" fill="#f8f2e9"/><text><textPath href="#circ">TANDOOR · WOK · HANDI · MADE WITH LOVE ·</textPath></text><text x="60" y="68" text-anchor="middle" style="font-family:Fraunces,serif;font-size:24px;letter-spacing:0;fill:#c98a4b">✦</text></svg>
       </div>
     </div>
 
     <div class="story">
       <span class="eyebrow reveal"><span class="idx">N° 01</span> Our Story</span>
-      <h2 class="section-title reveal" style="--d:.1s">Brewed slowly. <em>Shared</em> warmly.</h2>
-      <!-- ✏️ REPLACE: your real story (keep it short and personal) -->
-      <p class="big reveal" style="--d:.15s">We started with one simple belief — that a great cup of coffee can turn an ordinary day into a beautiful one.</p>
-      <p class="reveal" style="--d:.2s">Every bean we pour is ethically sourced and roasted in small batches. Every plate is made from scratch the morning you order it. And every corner of our space was designed for lingering — for first dates, long catch-ups, quiet laptops and loud laughter.</p>
-      <div class="signature reveal" style="--d:.25s"><div><b>— The Founders</b><small><span data-cfg="name">Aurelia</span> Café</small></div></div>
+      <h2 class="section-title reveal" style="--d:.1s">Two years. <em>Countless</em> full tables.</h2>
+      <!-- ✏️ your story -->
+      <p class="big reveal" style="--d:.15s">We opened on Danapur–Khagaul Road in August 2024 with one simple belief — nothing brings people together like good food.</p>
+      <p class="reveal" style="--d:.2s">Two years of delicious memories, laughter and unforgettable moments later, that belief still runs our kitchen. Kebabs come straight off the tandoor, noodles straight out of the wok, and every curry is cooked the way you'd want it at home — at prices that feel fair to every family, student and group of friends who walks in.</p>
+      <div class="signature reveal" style="--d:.25s"><div><b>— Team New Hungry Hope</b><small>Mustafapur, Patna</small></div></div>
 
       <div class="features">
         <article class="feature reveal" style="--d:.1s">
-          <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 9h13v4a6 6 0 0 1-6 6h-1a6 6 0 0 1-6-6V9Z"/><path d="M17 10h1.5a2.5 2.5 0 0 1 0 5H17M8 3c0 1.5 1.5 1.5 1.5 3M12 3c0 1.5 1.5 1.5 1.5 3"/></svg></span>
-          <div><h3>Specialty Coffee</h3><p>Single-origin beans, dialled in daily by baristas who obsess over every shot.</p></div>
+          <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 3c2 3 5 4.5 5 9a5 5 0 0 1-10 0c0-2 1-3.5 2-4.5 0 2 1 3 2 3 0-3-1-5 1-7.5Z"/></svg></span>
+          <div><h3>Tandoor &amp; Grill</h3><p>Tandoori chicken, tikka, malai and kali mirch kebabs, charred in the clay oven.</p></div>
         </article>
         <article class="feature reveal" style="--d:.2s">
-          <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 13.9A4 4 0 0 1 7.5 6a5 5 0 0 1 9 0A4 4 0 0 1 18 13.9V20H6z"/><path d="M6 17h12"/></svg></span>
-          <div><h3>Fresh Food</h3><p>Brunch plates, bakes and bowls made from scratch with seasonal ingredients.</p></div>
+          <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 12h18a9 9 0 0 1-18 0Z"/><path d="M14 3 9 11M18 4l-6 7"/></svg></span>
+          <div><h3>Wok, Momos &amp; Rolls</h3><p>Chilli baby corn, Manchurian, Schezwan noodles, momos and egg rolls, tossed fresh.</p></div>
         </article>
         <article class="feature reveal" style="--d:.3s">
-          <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 3v2M5.6 5.6 7 7M3 12h2M19 12h2M17 7l1.4-1.4"/><path d="M8 16a4 4 0 1 1 8 0"/><path d="M4 20h16"/></svg></span>
-          <div><h3>Aesthetic Ambience</h3><p>Soft light, warm textures and corners made for lingering — and for your feed.</p></div>
+          <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 3a4 4 0 0 1 4 4c0 3-4 6-4 6s-4-3-4-6a4 4 0 0 1 4-4Z"/><path d="M12 13v8M9 21h6"/></svg></span>
+          <div><h3>Celebrations</h3><p>Birthday decor, a party hall for family functions, and bulk party orders.</p></div>
         </article>
       </div>
     </div>
@@ -750,13 +758,12 @@ img:not(.raw){filter:saturate(.86) contrast(1.06) sepia(.12) brightness(.98)}
 <section class="manifesto" aria-label="Our philosophy">
   <div class="container">
     <span class="eyebrow" style="color:var(--gold);margin-bottom:40px"><span class="idx">N° 02</span> The Philosophy</span>
-    <!-- ✏️ REPLACE (optional): your brand belief in one or two lines -->
-    <p class="manifesto-text" data-words>We believe in slow mornings, honest ingredients and coffee that tastes like it was made <em>just for you.</em></p>
+    <p class="manifesto-text" data-words>Nothing brings people together like good food — so we cook every plate as if it's going to <em>our own family's table.</em></p>
     <div class="manifesto-foot">
-      <!-- ✏️ REPLACE: your real numbers -->
-      <div><b data-count="12">0</b><span>Single origins</span></div>
-      <div><b data-count="40">0</b><span>Cups an hour</span></div>
-      <div><b data-count="500" data-suffix="+">0</b><span>Five-star reviews</span></div>
+      <!-- ✏️ your numbers -->
+      <div><b data-count="100" data-suffix="+">0</b><span>Dishes on the menu</span></div>
+      <div><b data-count="119">0</b><span>Google reviews</span></div>
+      <div><b data-count="2">0</b><span>Years of good food</span></div>
       <div><b data-count="7">0</b><span>Days a week</span></div>
     </div>
   </div>
@@ -768,80 +775,74 @@ img:not(.raw){filter:saturate(.86) contrast(1.06) sepia(.12) brightness(.98)}
     <div class="menu-top">
       <div class="section-head">
         <span class="eyebrow reveal"><span class="idx">N° 03</span> Signature Menu</span>
-        <h2 class="section-title reveal" style="--d:.1s">Made to be <em>savoured.</em></h2>
-        <p class="lead reveal" style="--d:.15s">A short, obsessive menu — every item earns its place.</p>
+        <h2 class="section-title reveal" style="--d:.1s">Made to be <em>shared.</em></h2>
+        <p class="lead reveal" style="--d:.15s">A few favourites from our 100+ dish menu — from the clay oven to the wok.</p>
       </div>
       <div class="filters reveal" role="group" aria-label="Filter menu by category">
         <button class="filter" aria-pressed="true" data-filter="all">All</button>
-        <button class="filter" aria-pressed="false" data-filter="coffee">Coffee</button>
-        <button class="filter" aria-pressed="false" data-filter="food">Food</button>
-        <button class="filter" aria-pressed="false" data-filter="desserts">Desserts</button>
-        <button class="filter" aria-pressed="false" data-filter="beverages">Beverages</button>
-        <button class="filter" aria-pressed="false" data-filter="specials">Specials</button>
+        <button class="filter" aria-pressed="false" data-filter="tandoor">Tandoor</button>
+        <button class="filter" aria-pressed="false" data-filter="chinese">Chinese</button>
+        <button class="filter" aria-pressed="false" data-filter="curries">Curries</button>
+        <button class="filter" aria-pressed="false" data-filter="biryani">Biryani &amp; Rice</button>
       </div>
     </div>
 
-    <!-- ✏️ REPLACE: menu items — photo, name, description, price (₹ placeholders). Keep data-cat as one of: coffee, food, desserts, beverages, specials -->
+    <!-- ✏️ menu items — photo, name, description, price. Prices are the ones listed on Zomato. Keep data-cat as one of: tandoor, chinese, curries, biryani -->
     <div class="menu-grid" id="menuGrid">
-      <article class="dish tilt reveal" data-cat="coffee">
-        <div class="dish-img"><span class="tag">Bestseller</span><img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=800&q=75" alt="Velvet cappuccino with latte art" loading="lazy" width="800" height="600" /></div>
-        <div class="dish-body"><div class="dish-row"><h3>Velvet Cappuccino</h3><span class="price">₹240</span></div><p>Double ristretto, silky micro-foam and a whisper of cocoa. Our house classic.</p><span class="dish-cat">Coffee</span></div>
+      <article class="dish tilt reveal" data-cat="tandoor">
+        <div class="dish-img"><span class="tag">Bestseller</span><img src="/__l5e/assets-v1/dd17718d-eba3-4bbe-8d14-964fdf0d1bc6/tandoori-chicken.jpg" alt="Tandoori chicken with onion rings and lemon" loading="lazy" width="800" height="600" /></div>
+        <div class="dish-body"><div class="dish-row"><h3>Tandoori Chicken</h3><span class="price">₹356</span></div><p>Marinated overnight in yoghurt and spices, charred in the clay oven. Served with onion and lemon.</p><span class="dish-cat">Tandoor</span></div>
       </article>
-      <article class="dish tilt reveal" data-cat="coffee" style="--d:.08s">
-        <div class="dish-img"><img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=800&q=75" alt="Iced caramel cold brew in a tall glass" loading="lazy" width="800" height="600" /></div>
-        <div class="dish-body"><div class="dish-row"><h3>Salted Caramel Cold Brew</h3><span class="price">₹290</span></div><p>Eighteen-hour steeped brew, house caramel and a cloud of sweet cream.</p><span class="dish-cat">Coffee</span></div>
+      <article class="dish tilt reveal" data-cat="tandoor" style="--d:.08s">
+        <div class="dish-img"><img src="/__l5e/assets-v1/8fc220e5-d609-453a-b72e-37d863d7ea81/chicken-tikka.jpg" alt="Chicken tikka skewers with peppers and onion" loading="lazy" width="800" height="600" /></div>
+        <div class="dish-body"><div class="dish-row"><h3>Chicken Tikka</h3><span class="price">₹356</span></div><p>Boneless chicken with peppers and onion, smoky and juicy straight off the skewer.</p><span class="dish-cat">Tandoor</span></div>
       </article>
-      <article class="dish tilt reveal" data-cat="coffee" style="--d:.16s">
-        <div class="dish-img"><img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=800&q=75" alt="Flat white being poured" loading="lazy" width="800" height="600" /></div>
-        <div class="dish-body"><div class="dish-row"><h3>Honey Oat Flat White</h3><span class="price">₹260</span></div><p>Velvety oat milk, wildflower honey and a bold, chocolatey espresso.</p><span class="dish-cat">Coffee</span></div>
+      <article class="dish tilt reveal" data-cat="tandoor" style="--d:.16s">
+        <div class="dish-img"><img src="/__l5e/assets-v1/82b14756-c646-49c0-8d73-b69a8c1dc0a3/paneer-tikka.jpg" alt="Paneer tikka with onion and mint chutney" loading="lazy" width="800" height="600" /></div>
+        <div class="dish-body"><div class="dish-row"><h3>Paneer Tikka</h3><span class="price">₹314</span></div><p>Thick paneer cubes in a spiced yoghurt marinade, grilled till golden at the edges.</p><span class="dish-cat">Tandoor</span></div>
       </article>
-      <article class="dish tilt reveal" data-cat="food">
-        <div class="dish-img"><span class="tag">Bestseller</span><img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=75" alt="Sourdough toast topped with avocado and fried egg" loading="lazy" width="800" height="600" /></div>
-        <div class="dish-body"><div class="dish-row"><h3>Sunny Sourdough</h3><span class="price">₹380</span></div><p>Smashed avocado, chilli crunch and a jammy egg on toasted house sourdough.</p><span class="dish-cat">Food</span></div>
+      <article class="dish tilt reveal" data-cat="chinese">
+        <div class="dish-img"><span class="tag chef">House Special</span><img src="/__l5e/assets-v1/ebbcd6dc-91b2-452a-8644-dea4b7a374fe/chilli-baby-corn.jpg" alt="Chilli baby corn with capsicum" loading="lazy" width="800" height="600" /></div>
+        <div class="dish-body"><div class="dish-row"><h3>Chilli Baby Corn</h3><span class="price">₹262</span></div><p>Crispy baby corn tossed with garlic, capsicum and a fiery chilli glaze.</p><span class="dish-cat">Chinese</span></div>
       </article>
-      <article class="dish tilt reveal" data-cat="food" style="--d:.08s">
-        <div class="dish-img"><img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=800&q=75" alt="Stack of fluffy pancakes with syrup" loading="lazy" width="800" height="600" /></div>
-        <div class="dish-body"><div class="dish-row"><h3>Cloud Pancake Stack</h3><span class="price">₹420</span></div><p>Soufflé-soft pancakes, maple butter and seasonal berries. Pure weekend.</p><span class="dish-cat">Food</span></div>
+      <article class="dish tilt reveal" data-cat="chinese" style="--d:.08s">
+        <div class="dish-img"><img src="/__l5e/assets-v1/dab6ff76-b615-44cd-9b6d-09fee8d96f44/chicken-lollipop.jpg" alt="Chicken lollipops in a red chilli glaze" loading="lazy" width="800" height="600" /></div>
+        <div class="dish-body"><div class="dish-row"><h3>Chicken Lollipop</h3><span class="price">₹346</span></div><p>Frenched wings fried crisp and coated in a sticky, spicy sauce.</p><span class="dish-cat">Chinese</span></div>
       </article>
-      <article class="dish tilt reveal" data-cat="food" style="--d:.16s">
-        <div class="dish-img"><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=800&q=75" alt="Freshly baked butter croissants" loading="lazy" width="800" height="600" /></div>
-        <div class="dish-body"><div class="dish-row"><h3>Butter Croissant</h3><span class="price">₹190</span></div><p>Seventy-two layers of French butter, baked fresh every single morning.</p><span class="dish-cat">Food</span></div>
+      <article class="dish tilt reveal" data-cat="chinese" style="--d:.16s">
+        <div class="dish-img"><img src="/__l5e/assets-v1/7f303221-70e7-41e5-b598-695f2019fa65/veg-manchurian.jpg" alt="Veg Manchurian balls in dark gravy" loading="lazy" width="800" height="600" /></div>
+        <div class="dish-body"><div class="dish-row"><h3>Veg Manchurian</h3><span class="price">₹209</span></div><p>Eight vegetable dumplings in a glossy soy-garlic gravy with spring onion.</p><span class="dish-cat">Chinese</span></div>
       </article>
-      <article class="dish tilt reveal" data-cat="desserts">
-        <div class="dish-img"><span class="tag chef">Chef's Special</span><img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=800&q=75" alt="Classic tiramisu slice dusted with cocoa" loading="lazy" width="800" height="600" /></div>
-        <div class="dish-body"><div class="dish-row"><h3>Espresso Tiramisu</h3><span class="price">₹350</span></div><p>Mascarpone clouds, espresso-soaked ladyfingers and a heavy dusting of cocoa.</p><span class="dish-cat">Desserts</span></div>
+      <article class="dish tilt reveal" data-cat="curries">
+        <div class="dish-img"><span class="tag">Bestseller</span><img src="/__l5e/assets-v1/e0a36b1e-50b8-408b-ba07-c08910739478/kadhai-paneer.jpg" alt="Kadhai paneer in an iron kadhai" loading="lazy" width="800" height="600" /></div>
+        <div class="dish-body"><div class="dish-row"><h3>Kadhai Paneer</h3><span class="price">₹308</span></div><p>Paneer, capsicum and onion in a coarse, freshly ground kadhai masala.</p><span class="dish-cat">Curries</span></div>
       </article>
-      <article class="dish tilt reveal" data-cat="desserts" style="--d:.08s">
-        <div class="dish-img"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=75" alt="Rich chocolate fudge cake" loading="lazy" width="800" height="600" /></div>
-        <div class="dish-body"><div class="dish-row"><h3>Midnight Fudge Cake</h3><span class="price">₹320</span></div><p>Dark Belgian chocolate, ganache drip and a pinch of sea salt. Dangerous.</p><span class="dish-cat">Desserts</span></div>
+      <article class="dish tilt reveal" data-cat="curries" style="--d:.08s">
+        <div class="dish-img"><img src="/__l5e/assets-v1/0ec669ee-0ea5-4be4-ad19-5c1a750e59e0/paneer-handi.jpg" alt="Paneer handi in a black clay pot" loading="lazy" width="800" height="600" /></div>
+        <div class="dish-body"><div class="dish-row"><h3>Paneer Handi</h3><span class="price">₹318</span></div><p>Slow-cooked in a clay handi with a rich, creamy tomato gravy.</p><span class="dish-cat">Curries</span></div>
       </article>
-      <article class="dish tilt reveal" data-cat="desserts" style="--d:.16s">
-        <div class="dish-img"><img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=800&q=75" alt="Berry cream cake slice" loading="lazy" width="800" height="600" /></div>
-        <div class="dish-body"><div class="dish-row"><h3>Berry Bloom Cake</h3><span class="price">₹310</span></div><p>Vanilla sponge, mascarpone cream and fresh raspberries. Light as a daydream.</p><span class="dish-cat">Desserts</span></div>
+      <article class="dish tilt reveal" data-cat="curries" style="--d:.16s">
+        <div class="dish-img"><span class="tag chef">Chef's Special</span><img src="/__l5e/assets-v1/3c877f40-8cde-4f42-ad89-582c2cb27f9b/chicken-dehati.jpg" alt="Dark, rustic chicken dehati curry" loading="lazy" width="800" height="600" /></div>
+        <div class="dish-body"><div class="dish-row"><h3>Chicken Dehati</h3><span class="price">₹461</span></div><p>Village-style chicken curry — rustic, robust and best with a hot tandoori roti.</p><span class="dish-cat">Curries</span></div>
       </article>
-      <article class="dish tilt reveal" data-cat="beverages">
-        <div class="dish-img"><span class="tag">Bestseller</span><img src="https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&w=800&q=75" alt="Ceremonial matcha latte with latte art" loading="lazy" width="800" height="600" /></div>
-        <div class="dish-body"><div class="dish-row"><h3>Ceremonial Matcha Latte</h3><span class="price">₹280</span></div><p>Stone-ground Uji matcha whisked to order with your choice of milk.</p><span class="dish-cat">Beverages</span></div>
+      <article class="dish tilt reveal" data-cat="biryani">
+        <div class="dish-img"><span class="tag">Bestseller</span><img src="/__l5e/assets-v1/a740c6c7-f394-42c5-b7d7-56aeda4da852/chicken-biryani.jpg" alt="Chicken biryani in a copper plate" loading="lazy" width="800" height="600" /></div>
+        <div class="dish-body"><div class="dish-row"><h3>Chicken Biryani</h3><span class="price">₹273</span></div><p>Long-grain rice layered with spiced chicken, saffron and crisp fried onions.</p><span class="dish-cat">Biryani &amp; Rice</span></div>
       </article>
-      <article class="dish tilt reveal" data-cat="beverages" style="--d:.08s">
-        <div class="dish-img"><img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=800&q=75" alt="Iced peach tea with lime" loading="lazy" width="800" height="600" /></div>
-        <div class="dish-body"><div class="dish-row"><h3>Sparkling Peach Iced Tea</h3><span class="price">₹220</span></div><p>Cold-steeped black tea, white peach, lime and a fizzy finish.</p><span class="dish-cat">Beverages</span></div>
+      <article class="dish tilt reveal" data-cat="biryani" style="--d:.08s">
+        <div class="dish-img"><img src="/__l5e/assets-v1/4232a5e5-104b-475e-8b3c-ad181d57d84f/egg-chicken-biryani.jpg" alt="Egg chicken biryani with salad and raita" loading="lazy" width="800" height="600" /></div>
+        <div class="dish-body"><div class="dish-row"><h3>Egg Chicken Biryani</h3><span class="price">₹252</span></div><p>Our chicken biryani with a boiled egg, served with raita and fresh salad.</p><span class="dish-cat">Biryani &amp; Rice</span></div>
       </article>
-      <article class="dish tilt reveal" data-cat="specials" style="--d:.16s">
-        <div class="dish-img"><span class="tag chef">Chef's Special</span><img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&w=800&q=75" alt="Brioche French toast with banana and berries" loading="lazy" width="800" height="600" /></div>
-        <div class="dish-body"><div class="dish-row"><h3>Brioche French Toast</h3><span class="price">₹450</span></div><p>Custard-soaked brioche, caramelised banana, berries and whipped mascarpone.</p><span class="dish-cat">Specials</span></div>
-      </article>
-      <article class="dish tilt reveal" data-cat="specials">
-        <div class="dish-img"><span class="tag chef">Limited</span><img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=800&q=75" alt="Layered mocha dessert jar" loading="lazy" width="800" height="600" /></div>
-        <div class="dish-body"><div class="dish-row"><h3>Mocha Cloud Affogato</h3><span class="price">₹330</span></div><p>Vanilla bean gelato drowned in a hot espresso shot, cocoa crumble on top.</p><span class="dish-cat">Specials</span></div>
+      <article class="dish tilt reveal" data-cat="biryani" style="--d:.16s">
+        <div class="dish-img"><img src="/__l5e/assets-v1/83288642-f6c3-442b-8dc8-839f3ddabecd/chicken-schezwan-fried-rice.jpg" alt="Chicken Schezwan fried rice in a black bowl" loading="lazy" width="800" height="600" /></div>
+        <div class="dish-body"><div class="dish-row"><h3>Chicken Schezwan Fried Rice</h3><span class="price">₹299</span></div><p>Wok-tossed rice with chicken and our house Schezwan sauce. Bold and spicy.</p><span class="dish-cat">Biryani &amp; Rice</span></div>
       </article>
     </div>
+    <p class="menu-note reveal">Prices as listed on Zomato for online orders · dine-in prices may differ · ask us for the full menu.</p>
 
     <div class="menu-cta reveal">
-      <!-- ✏️ REPLACE: link "View Full Menu" to your PDF / Zomato / Swiggy menu (CONFIG.fullMenuUrl) -->
       <a class="btn btn-dark magnetic" data-link="menu" href="#" target="_blank" rel="noopener">View Full Menu</a>
-      <a class="btn btn-outline" data-link="whatsapp-order" href="#" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3a.5.5 0 0 0 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3Z"/></svg>
+      <a class="btn btn-outline" data-link="whatsapp-order" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3a.5.5 0 0 0 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3Z"/></svg>
         Order on WhatsApp</a>
     </div>
   </div>
@@ -853,27 +854,27 @@ img:not(.raw){filter:saturate(.86) contrast(1.06) sepia(.12) brightness(.98)}
     <div class="section-head center">
       <span class="eyebrow reveal" style="color:var(--gold)"><span class="idx">N° 04</span> The Gallery</span>
       <h2 class="section-title reveal" style="--d:.1s">Moments worth <em>sharing.</em></h2>
-      <p class="lead reveal" style="--d:.15s">Golden-hour corners, slow pours and plates that never make it to the table without a photo first.</p>
+      <p class="lead reveal" style="--d:.15s">Glowing corners, birthday tables and plates that never reach the table without a photo first.</p>
     </div>
 
-    <!-- ✏️ REPLACE: all gallery photos with your real café photos (mix interior, coffee, food, people and exterior) -->
+    <!-- ✏️ gallery photos -->
     <div class="masonry" id="masonry">
-      <figure class="shot reveal"><span class="num">01</span><img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=700&q=75" alt="Café interior with neon café sign" loading="lazy" width="700" height="1050" /><figcaption>The corner booth</figcaption></figure>
-      <figure class="shot reveal"><span class="num">02</span><img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=700&h=700&q=75" alt="Black coffee in a white cup on a wooden table" loading="lazy" width="700" height="700" /><figcaption>First sip</figcaption></figure>
-      <figure class="shot reveal"><span class="num">03</span><img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=700&h=900&q=75" alt="A table full of brunch plates" loading="lazy" width="700" height="900" /><figcaption>Sunday spread</figcaption></figure>
-      <figure class="shot reveal"><span class="num">04</span><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=700&h=520&q=75" alt="Two friends clinking latte cups" loading="lazy" width="700" height="520" /><figcaption>Cheers to us</figcaption></figure>
-      <figure class="shot reveal"><span class="num">05</span><img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=700&h=900&q=75" alt="Café exterior with outdoor seating" loading="lazy" width="700" height="900" /><figcaption>Find us here</figcaption></figure>
-      <figure class="shot reveal"><span class="num">06</span><img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=700&h=560&q=75" alt="Friends sharing food around a table" loading="lazy" width="700" height="560" /><figcaption>Table for four</figcaption></figure>
-      <figure class="shot reveal"><span class="num">07</span><img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=700&h=880&q=75" alt="Stacked fudgy brownies" loading="lazy" width="700" height="880" /><figcaption>Sweet tooth</figcaption></figure>
-      <figure class="shot reveal"><span class="num">08</span><img src="https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=700&h=700&q=75" alt="Matcha latte beside a laptop" loading="lazy" width="700" height="700" /><figcaption>Work mode, on</figcaption></figure>
-      <figure class="shot reveal"><span class="num">09</span><img src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?auto=format&fit=crop&w=700&h=900&q=75" alt="Coffee bar counter with pendant lights" loading="lazy" width="700" height="900" /><figcaption>Behind the bar</figcaption></figure>
-      <figure class="shot reveal"><span class="num">10</span><img src="https://images.unsplash.com/photo-1481833761820-0509d3217039?auto=format&fit=crop&w=700&h=520&q=75" alt="Café window glowing at night" loading="lazy" width="700" height="520" /><figcaption>After dark</figcaption></figure>
-      <figure class="shot reveal"><span class="num">11</span><img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=700&h=900&q=75" alt="Latte art and espresso portafilters" loading="lazy" width="700" height="900" /><figcaption>The craft</figcaption></figure>
-      <figure class="shot reveal"><span class="num">12</span><img src="https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?auto=format&fit=crop&w=700&h=560&q=75" alt="Leafy garden café seating" loading="lazy" width="700" height="560" /><figcaption>Garden table</figcaption></figure>
+      <figure class="shot reveal"><span class="num">01</span><img src="/__l5e/assets-v1/f2417b2d-3d05-4b22-bf93-51dad8f420db/dining-room-neon.jpg" alt="Glowing neon sign inside the dining room" loading="lazy" /><figcaption>The dining room</figcaption></figure>
+      <figure class="shot reveal"><span class="num">02</span><img src="/__l5e/assets-v1/f28ffb8e-1683-46c6-a69d-dc15dad174cd/fried-momos.jpg" alt="Golden fried momos with red chutney" loading="lazy" /><figcaption>Momos, fried golden</figcaption></figure>
+      <figure class="shot reveal"><span class="num">03</span><img src="/__l5e/assets-v1/e61f715e-13a7-469e-a1f1-b3a2a68f373c/birthday-decor.jpg" alt="Gold and black balloon arch for a birthday" loading="lazy" /><figcaption>Birthdays, done right</figcaption></figure>
+      <figure class="shot reveal"><span class="num">04</span><img src="/__l5e/assets-v1/dd17718d-eba3-4bbe-8d14-964fdf0d1bc6/tandoori-chicken.jpg" alt="Tandoori chicken on a black plate" loading="lazy" /><figcaption>Fresh off the tandoor</figcaption></figure>
+      <figure class="shot reveal"><span class="num">05</span><img src="/__l5e/assets-v1/a740c6c7-f394-42c5-b7d7-56aeda4da852/chicken-biryani.jpg" alt="Chicken biryani" loading="lazy" /><figcaption>Biryani hour</figcaption></figure>
+      <figure class="shot reveal"><span class="num">06</span><img src="/__l5e/assets-v1/d90d882b-b692-4734-a857-8b029d320416/tandoori-naan.jpg" alt="Stack of tandoori naan" loading="lazy" /><figcaption>Hot naan, always</figcaption></figure>
+      <figure class="shot reveal"><span class="num">07</span><img src="/__l5e/assets-v1/16033b69-ca5a-4c6c-94a9-b2215bd73915/momos-red-chutney.jpg" alt="Plate of momos around a bowl of chutney" loading="lazy" /><figcaption>Share the plate</figcaption></figure>
+      <figure class="shot reveal"><span class="num">08</span><img src="/__l5e/assets-v1/08f377ce-e385-48be-8d30-6f425eb016ac/chicken-kali-mirch-kebab.jpg" alt="Chicken kali mirch kebab with mint chutney" loading="lazy" /><figcaption>Kali mirch kebab</figcaption></figure>
+      <figure class="shot reveal"><span class="num">09</span><img src="/__l5e/assets-v1/892edef4-e5aa-428e-a114-723e3eb9e5df/chilli-potato.jpg" alt="Honey chilli potato with shredded vegetables" loading="lazy" /><figcaption>Chilli potato</figcaption></figure>
+      <figure class="shot reveal"><span class="num">10</span><img src="/__l5e/assets-v1/82b14756-c646-49c0-8d73-b69a8c1dc0a3/paneer-tikka.jpg" alt="Paneer tikka with onions and chutney" loading="lazy" /><figcaption>Paneer tikka</figcaption></figure>
+      <figure class="shot reveal"><span class="num">11</span><img src="/__l5e/assets-v1/dab6ff76-b615-44cd-9b6d-09fee8d96f44/chicken-lollipop.jpg" alt="Chicken lollipops" loading="lazy" /><figcaption>Chicken lollipop</figcaption></figure>
+      <figure class="shot reveal"><span class="num">12</span><img src="/__l5e/assets-v1/513b9e55-d27c-4306-994a-dcb0d6128907/mixed-non-veg-noodles.jpg" alt="Mixed non-veg noodles" loading="lazy" /><figcaption>Wok-tossed noodles</figcaption></figure>
     </div>
 
     <div class="gallery-foot reveal">
-      <p>Tag us <em data-cfg="instagramHandle">@aureliacafe</em> to be featured.</p>
+      <p>Tag us <em data-cfg="instagramHandle">@newhungryhope</em> to be featured.</p>
       <a class="btn btn-ghost" data-link="instagram" href="#" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
         Follow on Instagram</a>
@@ -891,32 +892,32 @@ img:not(.raw){filter:saturate(.86) contrast(1.06) sepia(.12) brightness(.98)}
   <div class="container">
     <div class="section-head center">
       <span class="eyebrow reveal"><span class="idx">N° 05</span> Why Visit Us</span>
-      <h2 class="section-title reveal" style="--d:.1s">Your new <em>favourite</em> place.</h2>
+      <h2 class="section-title reveal" style="--d:.1s">Your new <em>favourite</em> table.</h2>
     </div>
     <div class="why-grid">
       <article class="why-card reveal">
         <span class="why-num">01</span>
-        <span class="why-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><ellipse cx="12" cy="12" rx="6" ry="9" transform="rotate(35 12 12)"/><path d="M8.5 6.5c3 3 4 8 7 11"/></svg></span>
-        <h3>Premium Coffee</h3>
-        <p>Specialty-grade beans, roasted in small batches and brewed by people who genuinely care.</p>
+        <span class="why-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M7 5h10M7 9h10M7 5c4 0 6 2 6 4s-2 4-6 4l7 6"/></svg></span>
+        <h3>Pocket-friendly</h3>
+        <p>Generous plates at about ₹200–400 per person — the thing our guests mention most.</p>
       </article>
       <article class="why-card reveal" style="--d:.1s">
         <span class="why-num">02</span>
-        <span class="why-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 12h18a9 9 0 0 1-18 0Z"/><path d="M8 8c0-2 2-2 2-4M13 8c0-2 2-2 2-4"/></svg></span>
-        <h3>Freshly Prepared Food</h3>
-        <p>Nothing pre-made, nothing frozen. Plates built from scratch, the moment you order.</p>
+        <span class="why-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 3c2 3 5 4.5 5 9a5 5 0 0 1-10 0c0-2 1-3.5 2-4.5 0 2 1 3 2 3 0-3-1-5 1-7.5Z"/></svg></span>
+        <h3>Cooked to Order</h3>
+        <p>Tandoor, wok and handi fired up when you order — hot, fresh and full of flavour.</p>
       </article>
       <article class="why-card reveal" style="--d:.2s">
         <span class="why-num">03</span>
-        <span class="why-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></span>
-        <h3>Instagram-worthy Interiors</h3>
-        <p>Soft light, warm wood and little details designed to be noticed — and posted.</p>
+        <span class="why-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 21h18M5 21V10l7-6 7 6v11"/><path d="M9 21v-6h6v6"/></svg></span>
+        <h3>Indoor &amp; Outdoor Seating</h3>
+        <p>A warm, brick-and-neon dining room inside and open-air tables outside. Room for the whole family.</p>
       </article>
       <article class="why-card reveal" style="--d:.3s">
         <span class="why-num">04</span>
-        <span class="why-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="4" y="5" width="16" height="10" rx="1.5"/><path d="M2 19h20"/><path d="M12 13s-3-1.7-3-3.6A1.6 1.6 0 0 1 12 8.6a1.6 1.6 0 0 1 3 .8C15 11.3 12 13 12 13Z"/></svg></span>
-        <h3>Work, Dates & Hangouts</h3>
-        <p>Fast Wi-Fi and plug points by day, candle-lit tables by night. Every plan fits here.</p>
+        <span class="why-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 3a4 4 0 0 1 4 4c0 3-4 6-4 6s-4-3-4-6a4 4 0 0 1 4-4Z"/><path d="M12 13v8M9 21h6"/></svg></span>
+        <h3>Parties &amp; Banquets</h3>
+        <p>Birthdays, get-togethers and family functions in our party hall — decor and food sorted.</p>
       </article>
     </div>
   </div>
@@ -931,43 +932,41 @@ img:not(.raw){filter:saturate(.86) contrast(1.06) sepia(.12) brightness(.98)}
     </div>
 
     <div class="reviews-grid">
-      <!-- ✏️ REPLACE: your real rating + number of reviews -->
+      <!-- ✏️ rating + number of reviews (from Google) -->
       <div class="rating-hero reveal">
         <div>
-          <div class="rating-num">4.8<sup>★</sup></div>
-          <div class="stars" aria-label="5 out of 5 stars" style="margin-top:14px">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg>
-          </div>
+          <div class="rating-num"><span data-cfg="rating">4.3</span><sup>★</sup></div>
+          <div class="stars" aria-label="4.3 out of 5 stars" style="margin-top:14px"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><span class="star-part"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg></span></div>
         </div>
         <div>
-          <h3>Rated by 500+ happy customers</h3>
-          <p>Every review is a reason we open the doors each morning. Thank you.</p>
-          <a class="g-pill glass" data-link="maps" href="#" target="_blank" rel="noopener">
+          <h3>Rated by <span data-cfg="reviewCount">119</span> guests on Google</h3>
+          <p>Every review is a reason we fire up the tandoor each day. Thank you, Patna.</p>
+          <a class="g-pill glass" data-link="google" href="#" target="_blank" rel="noopener">
             <svg width="16" height="16" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36a12 12 0 1 1 7.9-21l5.7-5.7A20 20 0 1 0 44 24c0-1.2-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8A12 12 0 0 1 24 12c3 0 5.8 1.1 7.9 3l5.7-5.7A20 20 0 0 0 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2A12 12 0 0 1 12.7 28l-6.5 5A20 20 0 0 0 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3a12 12 0 0 1-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.2-.1-2.4-.4-3.5z"/></svg>
             Read us on Google
           </a>
         </div>
       </div>
 
-      <!-- ✏️ REPLACE: these are sample reviews — paste your real Google reviews here -->
-      <figure class="review reveal" style="--d:.05s"><div class="stars" aria-label="5 stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg></div>
-        <blockquote>"The best cappuccino I've had outside Italy. I came for one coffee and stayed for three hours."</blockquote>
-        <figcaption class="reviewer"><span class="avatar">PS</span><div><b>Priya S.</b><small>Google Review</small></div></figcaption></figure>
-      <figure class="review reveal" style="--d:.1s"><div class="stars" aria-label="5 stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg></div>
-        <blockquote>"Our go-to date spot. Warm lights, dreamy desserts and the tiramisu is honestly unreal."</blockquote>
-        <figcaption class="reviewer"><span class="avatar">AR</span><div><b>Arjun & Riya</b><small>Google Review</small></div></figcaption></figure>
-      <figure class="review reveal" style="--d:.15s"><div class="stars" aria-label="5 stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg></div>
-        <blockquote>"Fast Wi-Fi, comfy chairs and endless flat whites. My unofficial office, three days a week."</blockquote>
-        <figcaption class="reviewer"><span class="avatar">KM</span><div><b>Karan M.</b><small>Google Review</small></div></figcaption></figure>
-      <figure class="review reveal" style="--d:.05s"><div class="stars" aria-label="5 stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg></div>
-        <blockquote>"Celebrated my birthday here and the team made it so special. Gorgeous cake, even better vibes."</blockquote>
-        <figcaption class="reviewer"><span class="avatar">NJ</span><div><b>Neha J.</b><small>Google Review</small></div></figcaption></figure>
-      <figure class="review reveal" style="--d:.1s"><div class="stars" aria-label="5 stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg></div>
-        <blockquote>"Every corner is photogenic. The pancakes look like a dream and taste even better."</blockquote>
-        <figcaption class="reviewer"><span class="avatar">SD</span><div><b>Sana D.</b><small>Instagram</small></div></figcaption></figure>
-      <figure class="review reveal" style="--d:.15s"><div class="stars" aria-label="5 stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg></div>
-        <blockquote>"Weekend brunch with live acoustic music? Sign me up every single Sunday."</blockquote>
-        <figcaption class="reviewer"><span class="avatar">VK</span><div><b>Vikram K.</b><small>Google Review</small></div></figcaption></figure>
+      <!-- ✏️ real Google reviews -->
+      <figure class="review reveal" style="--d:0.05s"><div class="stars" aria-label="5 stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg></div>
+        <blockquote>"Very good restaurant. Momos are best."</blockquote>
+        <figcaption class="reviewer"><span class="avatar">PS</span><div><b>Priyaranjan Singh</b><small>Google Review</small></div></figcaption></figure>
+      <figure class="review reveal" style="--d:0.1s"><div class="stars" aria-label="5 stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg></div>
+        <blockquote>"Pocket friendly and taste was also good and staff behaviour was very nice."</blockquote>
+        <figcaption class="reviewer"><span class="avatar">BK</span><div><b>Babul Kumar</b><small>Google Review</small></div></figcaption></figure>
+      <figure class="review reveal" style="--d:0.15s"><div class="stars" aria-label="5 stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg></div>
+        <blockquote>"Ambience is quite good. Taste of food is good. Fast service. We always prefer to dine in and sometimes parcel the food."</blockquote>
+        <figcaption class="reviewer"><span class="avatar">PK</span><div><b>Praveen Kumar</b><small>Google Review</small></div></figcaption></figure>
+      <figure class="review reveal" style="--d:0.05s"><div class="stars" aria-label="4 stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><span class="star-off"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg></span></div>
+        <blockquote>"A comfortable place to unwind, with a mix of indoor and outdoor seating. Spacious enough to enjoy a meal without feeling crowded."</blockquote>
+        <figcaption class="reviewer"><span class="avatar">AK</span><div><b>Ankit Kumar</b><small>Google Review</small></div></figcaption></figure>
+      <figure class="review reveal" style="--d:0.1s"><div class="stars" aria-label="5 stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg></div>
+        <blockquote>"Tasty food with lots of options to eat, at reasonable rates. Staff is good."</blockquote>
+        <figcaption class="reviewer"><span class="avatar">G</span><div><b>Google guest</b><small>Google Review</small></div></figcaption></figure>
+      <figure class="review reveal" style="--d:0.15s"><div class="stars" aria-label="5 stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg></div>
+        <blockquote>"Nice taste, clean, healthy and hygienic restaurant. Thank you!"</blockquote>
+        <figcaption class="reviewer"><span class="avatar">AS</span><div><b>Amrutha Shankar</b><small>Google Review</small></div></figcaption></figure>
     </div>
   </div>
 </section>
@@ -976,50 +975,50 @@ img:not(.raw){filter:saturate(.86) contrast(1.06) sepia(.12) brightness(.98)}
 <section class="section events curve" id="events">
   <div class="container">
     <div class="events-head"><div>
-      <span class="eyebrow reveal" style="color:var(--gold);margin-bottom:22px"><span class="idx">N° 07</span> Events &amp; Offers</span>
-      <h2 class="events-title reveal">Something's <em>always</em> brewing.</h2></div>
-      <p class="reveal" style="--d:.1s">From slow Sunday brunches to candle-lit acoustic nights — come for the coffee, stay for the moments.</p>
+      <span class="eyebrow reveal" style="color:var(--gold);margin-bottom:22px"><span class="idx">N° 07</span> Parties &amp; Offers</span>
+      <h2 class="events-title reveal">Something's <em>always</em> cooking.</h2></div>
+      <p class="reveal" style="--d:.1s">From birthday arches to family functions and late-night snack boxes — bring the people, we'll bring the food.</p>
     </div>
 
-    <!-- ✏️ REPLACE: event days, timings and your current offer -->
+    <!-- ✏️ party services and your current offer -->
     <div class="bento">
       <article class="ev reveal">
-        <img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=1400&q=75" alt="Weekend brunch spread" loading="lazy" />
-        <span class="ev-when glass">Sat & Sun · 9 AM – 3 PM</span>
-        <h3>Weekend Brunch</h3>
-        <p>Bottomless coffee, golden pancakes and long lazy tables built for the whole gang.</p>
+        <img src="/__l5e/assets-v1/e61f715e-13a7-469e-a1f1-b3a2a68f373c/birthday-decor.jpg" alt="Gold and black balloon arch with a neon Happy Birthday sign" loading="lazy" />
+        <span class="ev-when glass">Any day · Decor on request</span>
+        <h3>Birthday Celebrations</h3>
+        <p>Balloon arches, a neon "Happy Birthday", a cake table and your favourite food. Tell us the date — we'll set the scene.</p>
       </article>
       <article class="ev reveal" style="--d:.08s">
-        <img src="https://images.unsplash.com/photo-1481833761820-0509d3217039?auto=format&fit=crop&w=900&q=75" alt="Café glowing at night" loading="lazy" />
-        <span class="ev-when glass">Every Friday · 8 PM</span>
-        <h3>Live Music</h3>
-        <p>Acoustic sets, warm lights, good company.</p>
+        <img src="/__l5e/assets-v1/f2417b2d-3d05-4b22-bf93-51dad8f420db/dining-room-neon.jpg" alt="Warm dining room with a glowing neon sign" loading="lazy" />
+        <span class="ev-when glass">Groups &amp; families</span>
+        <h3>Party Hall</h3>
+        <p>Space for family functions and get-togethers.</p>
       </article>
       <article class="ev reveal" style="--d:.16s">
-        <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=900&q=75" alt="Espresso tools and latte art" loading="lazy" />
-        <span class="ev-when glass">Monthly · Book ahead</span>
-        <h3>Coffee Workshops</h3>
-        <p>Learn latte art and home brewing from our baristas.</p>
+        <img src="/__l5e/assets-v1/a740c6c7-f394-42c5-b7d7-56aeda4da852/chicken-biryani.jpg" alt="Chicken biryani in a copper plate" loading="lazy" />
+        <span class="ev-when glass">Order a day ahead</span>
+        <h3>Party Orders</h3>
+        <p>Biryani, curries and starters in bulk, packed for your event.</p>
       </article>
       <article class="ev reveal" style="--d:.08s">
-        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1100&q=75" alt="Celebration chocolate cake" loading="lazy" />
-        <span class="ev-when glass">Any day · Private corners</span>
-        <h3>Birthday Celebrations</h3>
-        <p>Custom cakes, cosy decor and a table that's all yours. We'll handle the magic.</p>
+        <img src="/__l5e/assets-v1/16033b69-ca5a-4c6c-94a9-b2215bd73915/momos-red-chutney.jpg" alt="Fried momos with red chutney" loading="lazy" />
+        <span class="ev-when glass">Daily · 12 PM till close</span>
+        <h3>Takeaway &amp; Delivery</h3>
+        <p>Call or WhatsApp to order, or find us on Zomato.</p>
       </article>
       <article class="ev ev-offer reveal" style="--d:.16s">
-        <span class="ev-when">Seasonal Offer</span>
+        <span class="ev-when">Snack Boxes &amp; Combos</span>
         <div>
-          <div class="big">20% off</div>
-          <h3>Winter Warmers</h3>
-          <p>On all hot chocolates and spiced lattes, weekdays 3–6 PM. Limited season only.</p>
+          <div class="big">from ₹399</div>
+          <h3>Party Boxes</h3>
+          <p>Roll Snacks Box, Chicken Snacks Box, Chinese Veg Delight and Biryani Combo for four — made for movie nights.</p>
         </div>
       </article>
     </div>
 
     <div class="events-cta glass reveal">
-      <p>Planning something special? Let's make it unforgettable.</p>
-      <a class="btn btn-gold magnetic" data-link="whatsapp-event" href="#" target="_blank" rel="noopener">Reserve your spot</a>
+      <p>Planning a birthday or family function? Let's make it unforgettable.</p>
+      <a class="btn btn-gold magnetic" data-link="whatsapp-event" href="#" target="_blank" rel="noopener">Plan your party</a>
     </div>
   </div>
 </section>
@@ -1036,7 +1035,7 @@ img:not(.raw){filter:saturate(.86) contrast(1.06) sepia(.12) brightness(.98)}
       <div class="info-card reveal">
         <div class="info-row">
           <span class="info-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
-          <div><h4>Address</h4><p data-cfg="address">123 Placeholder Street, Your Area, Your City 000000</p></div>
+          <div><h4>Address</h4><p data-cfg="address">Danapur – Khagaul Rd, near Vijay Path, Mustafapur, Patna 801105</p></div>
         </div>
         <div class="info-row">
           <span class="info-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
@@ -1047,7 +1046,11 @@ img:not(.raw){filter:saturate(.86) contrast(1.06) sepia(.12) brightness(.98)}
         </div>
         <div class="info-row">
           <span class="info-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span>
-          <div><h4>Phone</h4><a data-link="tel" href="#" data-cfg="phone">+91 00000 00000</a></div>
+          <div><h4>Phone</h4><a data-link="tel" href="#" data-cfg="phone">0612 354 4283</a><a data-link="tel2" href="#" data-cfg="mobile">+91 74880 27569</a><a data-link="tel3" href="#" data-cfg="mobile2">+91 78277 27668</a></div>
+        </div>
+        <div class="info-row">
+          <span class="info-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 12h16M6 12V8a6 6 0 0 1 12 0v4M5 12l1 8h12l1-8"/></svg></span>
+          <div><h4>Good to know</h4><p>Dine-in · Takeaway · Delivery · Birthday &amp; party bookings · About ₹400 for two</p></div>
         </div>
         <div class="info-actions">
           <a class="btn btn-gold btn-sm" data-link="whatsapp" href="#" target="_blank" rel="noopener">Book a Table</a>
@@ -1057,10 +1060,10 @@ img:not(.raw){filter:saturate(.86) contrast(1.06) sepia(.12) brightness(.98)}
       </div>
 
       <div class="map reveal" style="--d:.1s">
-        <!-- ✏️ REPLACE: map location is set by CONFIG.mapQuery below -->
-        <iframe id="mapFrame" title="Map showing our café location" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=coffee%20shop&z=15&output=embed"></iframe>
+        <!-- map location is set by CONFIG.mapQuery below -->
+        <iframe id="mapFrame" title="Map showing New Hungry Hope Restaurant" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="about:blank"></iframe>
         <div class="map-pin">
-          <div><b data-cfg="name">Aurelia</b><small data-cfg="hoursShort">Open daily · 8:00 AM – 11:00 PM</small></div>
+          <div><b data-cfg="name">New Hungry Hope</b><small data-cfg="hoursShort">Open daily · 12 PM – 10:30 PM</small></div>
           <a class="btn btn-gold btn-sm" data-link="maps" href="#" target="_blank" rel="noopener">Directions</a>
         </div>
       </div>
@@ -1072,14 +1075,14 @@ img:not(.raw){filter:saturate(.86) contrast(1.06) sepia(.12) brightness(.98)}
 <!-- ================= FOOTER ================= -->
 <footer class="footer">
   <div class="container">
-    <p class="footer-big reveal">See you for <em>coffee.</em></p>
+    <p class="footer-big reveal">See you for <em>dinner.</em></p>
     <div class="footer-grid">
       <div>
         <a href="#home" class="logo">
-          <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 9h13v4a6 6 0 0 1-6 6h-1a6 6 0 0 1-6-6V9Z"/><path d="M17 10h1.5a2.5 2.5 0 0 1 0 5H17"/><path d="M8 3c0 1.5 1.5 1.5 1.5 3M12 3c0 1.5 1.5 1.5 1.5 3"/></svg></span>
-          <span class="logo-text"><span data-cfg="name">Aurelia</span><small>Coffee House</small></span>
+          <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 18h18"/><path d="M5 18a7 7 0 0 1 14 0"/><path d="M12 11V9"/><path d="M10.5 9h3"/><path d="M8 14.5a4 4 0 0 1 2.5-2"/></svg></span>
+          <span class="logo-text"><span data-cfg="name">New Hungry Hope</span><small>Restaurant · Patna</small></span>
         </a>
-        <p class="brand-line">Slow coffee, honest food and a little corner of the city that feels like home.</p>
+        <p class="brand-line">Tandoor, biryani and Indo-Chinese favourites — and a table that always has room for one more.</p>
         <div class="socials">
           <a data-link="instagram" href="#" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
           <a data-link="facebook" href="#" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8.5V6.8c0-.8.5-1 .9-1H17V2.1L14.2 2C11 2 10.3 4.4 10.3 6v2.5H8V12h2.3v10H14V12h2.7l.4-3.5Z"/></svg></a>
@@ -1088,20 +1091,20 @@ img:not(.raw){filter:saturate(.86) contrast(1.06) sepia(.12) brightness(.98)}
       </div>
       <div>
         <h4>Explore</h4>
-        <ul><li><a href="#about">Our Story</a></li><li><a href="#menu">Menu</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#events">Events</a></li></ul>
+        <ul><li><a href="#about">Our Story</a></li><li><a href="#menu">Menu</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#events">Parties</a></li></ul>
       </div>
       <div>
         <h4>Visit</h4>
-        <ul><li data-cfg="address">123 Placeholder Street, Your Area, Your City 000000</li><li data-cfg="hoursShort">Open daily · 8:00 AM – 11:00 PM</li></ul>
+        <ul><li data-cfg="address">Danapur – Khagaul Rd, near Vijay Path, Mustafapur, Patna 801105</li><li data-cfg="hoursShort">Open daily · 12 PM – 10:30 PM</li></ul>
       </div>
       <div>
         <h4>Contact</h4>
-        <ul><li><a data-link="tel" href="#" data-cfg="phone">+91 00000 00000</a></li><li><a data-link="whatsapp" href="#" target="_blank" rel="noopener">WhatsApp us</a></li><li><a data-link="instagram" href="#" target="_blank" rel="noopener" data-cfg="instagramHandle">@aureliacafe</a></li></ul>
+        <ul><li><a data-link="tel" href="#" data-cfg="phone">0612 354 4283</a></li><li><a data-link="whatsapp" href="#" target="_blank" rel="noopener">WhatsApp us</a></li><li><a data-link="menu" href="#" target="_blank" rel="noopener">Order on Zomato</a></li><li><a data-link="instagram" href="#" target="_blank" rel="noopener" data-cfg="instagramHandle">@newhungryhope</a></li></ul>
       </div>
     </div>
     <div class="copyright">
-      <span>© <span id="yr">2026</span> <span data-cfg="name">Aurelia</span> Café. All rights reserved.</span>
-      <span>Crafted with love &amp; caffeine.</span>
+      <span>© <span id="yr">2026</span> <span data-cfg="name">New Hungry Hope</span> Restaurant. All rights reserved.</span>
+      <span>Made with love &amp; a hot tandoor.</span>
     </div>
   </div>
 </footer>
@@ -1112,25 +1115,30 @@ img:not(.raw){filter:saturate(.86) contrast(1.06) sepia(.12) brightness(.98)}
 
 <script>
 /* =====================================================================
-   ✏️ CONFIG — EDIT YOUR CAFÉ DETAILS HERE
+   ✏️ CONFIG — EDIT YOUR RESTAURANT DETAILS HERE
    Everything on the page (buttons, links, map, footer) updates from this.
    ===================================================================== */
 const CONFIG = {
-  name: "Aurelia",                                   // ✏️ café name (shown as "Aurelia Café")
-  city: "Your City",                                 // ✏️ city / area
-  address: "123 Placeholder Street, Your Area, Your City 000000", // ✏️ full address
-  phone: "+91 00000 00000",                          // ✏️ phone number as shown on the site
-  whatsapp: "910000000000",                          // ✏️ WhatsApp number: country code + number, digits only
-  instagram: "https://instagram.com/yourcafe",       // ✏️ Instagram link
-  instagramHandle: "@yourcafe",                      // ✏️ Instagram handle
-  facebook: "https://facebook.com/yourcafe",         // ✏️ Facebook link
-  mapsLink: "https://maps.google.com/?q=coffee+shop",// ✏️ your Google Maps share link
-  mapQuery: "coffee shop",                           // ✏️ what the embedded map shows: your café name + address
-  fullMenuUrl: "#menu",                              // ✏️ link to your full menu (PDF, Zomato, Swiggy...)
-  year: "2019",                                      // ✏️ year you opened
-  hoursShort: "Open daily · 8:00 AM – 11:00 PM",     // ✏️ short timings line
+  name: "New Hungry Hope",                           // ✏️ restaurant name
+  city: "Mustafapur, Patna",                         // ✏️ area / city
+  address: "Danapur – Khagaul Rd, near Vijay Path & Tribhuvan More, near Danapur Station, Mustafapur, Patna, Bihar 801105", // ✏️ full address
+  phone: "0612 354 4283",                            // ✏️ main phone (from Google)
+  mobile: "+91 74880 27569",                         // ✏️ mobile 1 (from your posters & Zomato)
+  mobile2: "+91 78277 27668",                        // ✏️ mobile 2 (from your posters)
+  whatsapp: "917488027569",                          // ✏️ WhatsApp number: country code + number, digits only
+  instagram: "https://www.instagram.com/newhungryhope/", // ✏️ Instagram link
+  instagramHandle: "@newhungryhope",                 // ✏️ Instagram handle
+  facebook: "",                                      // ✏️ Facebook page link (icon stays hidden while empty)
+  googleListing: "https://share.google/KgHbT5nCDFw548f0q", // ✏️ your Google listing (reviews)
+  mapsLink: "https://www.google.com/maps/dir/?api=1&destination=25.599223,85.042463", // ✏️ directions link
+  mapQuery: "New Hungry Hope, Danapur - Khagaul Rd, Mustafapur, Patna 801105", // ✏️ what the embedded map shows
+  fullMenuUrl: "https://www.zomato.com/patna/new-hungry-hope-rukanpura/order", // ✏️ full menu / online ordering
+  rating: "4.3",                                     // ✏️ Google rating
+  reviewCount: "119",                                // ✏️ number of Google reviews
+  year: "2024",                                      // ✏️ year you opened
+  hoursShort: "Open daily · 12 PM – 10:30 PM (11 PM Fri–Sun)", // ✏️ short timings line
   // ✏️ opening hours, 24h format. Sunday = 0 ... Saturday = 6. Use null for closed days.
-  hours: { 0:["08:00","23:00"], 1:["08:00","23:00"], 2:["08:00","23:00"], 3:["08:00","23:00"], 4:["08:00","23:00"], 5:["08:00","23:30"], 6:["08:00","23:30"] }
+  hours: { 0:["12:00","23:00"], 1:["12:00","22:30"], 2:["12:00","22:30"], 3:["12:00","22:30"], 4:["12:00","22:30"], 5:["12:00","23:00"], 6:["12:00","23:00"] }
 };
 
 (function () {
@@ -1141,17 +1149,21 @@ const CONFIG = {
   /* ---------- fill config into the page ---------- */
   $$("[data-cfg]").forEach(el => { const v = CONFIG[el.dataset.cfg]; if (v) el.textContent = v; });
   const wa = msg => `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`;
+  const tel = n => `tel:${n.replace(/[^\d+]/g, "").replace(/^0/, "+91")}`;
   const links = {
-    "whatsapp": wa(`Hi! I would like to book a table at ${CONFIG.name} Café.`),
-    "whatsapp-order": wa(`Hi! I would like to place an order from ${CONFIG.name} Café.`),
-    "whatsapp-event": wa(`Hi! I'd love to know more about events and celebrations at ${CONFIG.name} Café.`),
-    "tel": `tel:${CONFIG.phone.replace(/[^\d+]/g, "")}`,
+    "whatsapp": wa(`Hi! I would like to book a table at ${CONFIG.name}.`),
+    "whatsapp-order": wa(`Hi! I would like to place an order from ${CONFIG.name}.`),
+    "whatsapp-event": wa(`Hi! I'd like to plan a birthday / party at ${CONFIG.name}.`),
+    "tel": tel(CONFIG.phone),
+    "tel2": CONFIG.mobile ? tel(CONFIG.mobile) : "",
+    "tel3": CONFIG.mobile2 ? tel(CONFIG.mobile2) : "",
     "instagram": CONFIG.instagram,
     "facebook": CONFIG.facebook,
+    "google": CONFIG.googleListing || CONFIG.mapsLink,
     "maps": CONFIG.mapsLink,
     "menu": CONFIG.fullMenuUrl
   };
-  $$("[data-link]").forEach(a => { const h = links[a.dataset.link]; if (h) a.href = h; if (h && h.startsWith("#")) a.removeAttribute("target"); });
+  $$("[data-link]").forEach(a => { const h = links[a.dataset.link]; if (!h) { a.hidden = true; return; } a.href = h; if (h.startsWith("#") || h.startsWith("tel:")) a.removeAttribute("target"); });
   $("#mapFrame").src = `https://maps.google.com/maps?q=${encodeURIComponent(CONFIG.mapQuery)}&z=15&output=embed`;
   $("#yr").textContent = new Date().getFullYear();
 
